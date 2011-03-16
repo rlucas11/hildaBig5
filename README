@@ -1,0 +1,8 @@
+This project folder contains all files necessary to setup and run analyses for the Wortman, Lucas, & Donnellan HILDA Big 5 paper. This paper uses the 9th release of the HILDA dataset to examine mean-level and rank-order stability in the Big Five over time. Analyses are conducted mostly in Mplus, using the Mplus automation package.  The scripts in this project create and run a series of Mplus models to test measurement invariance.
+
+To get from raw HILDA files to working data files, run script 'dataSetup.r'. This results in the 'hildaItems.csv' file, which is correctly formatted for Mplus.  This file is used directly in item-level ESEM results, though only the final, most constrained model could be tested.  Other less constrained models led to problems. Specifically, Mplus would quit with no errors.
+
+The file 'mplusDataSetup.r' sets up the parcelled data files for the CFA analysis.  The file 'mplusCFASetup.r', creates the relevant Mplus input files, runs those files, summarizes results and creates figures.  All documents are placed in the reports/mplus folder of the project.
+
+Because of the confidential nature of the HILDA data, no data files are stored in the project, which is kept on github.  So all data files are saved to and loaded from locations outside the project folder. I need to decide whether this is the best strategy for keeping all of this organized.
+
