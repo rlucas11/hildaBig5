@@ -1,0 +1,14 @@
+------Begin Mplus Model Run: 13Mar2011 13:14:50------
+Target directory: /home/rich/Dropbox/HILDA09/Mplus/Auto/Model2
+Run options:
+	Recursive (run models in subdirectories): FALSE
+	Show output on console: FALSE
+	Replace existing outfile: always
+------
+Currently running model: Model2 for Agreeableness.inp
+Currently running model: Model2 for Conscientiousness.inp
+Currently running model: Model2 for Extraversion.inp
+Currently running model: Model2 for Neuroticism.inp
+Currently running model: Model2 for Openness.inp
+
+------End Mplus Model Run: 13Mar2011 13:15:52------

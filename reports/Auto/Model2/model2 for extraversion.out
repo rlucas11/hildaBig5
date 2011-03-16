@@ -1,0 +1,4267 @@
+Mplus VERSION 6.1
+MUTHEN & MUTHEN
+03/13/2011   1:15 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE:      HILDA Extraversion Multigroup Model Model 2 (Time Metric Invariance);
+  DATA:       FILE is /home/rich/Dropbox/HILDA09/Mplus/Auto/eParcels.dat;
+  VARIABLE:   NAMES ARE id hid weight age t1p1 t1p2 t1p3
+              t2p1 t2p2 t2p3;
+              USEVAR = t1p1-t2p3;
+              MISSING = .;
+              GROUP = age (1=a 2=b 3=c 4=d 5=e 6=f 7=g
+              8=h 9=i 10=j 11=k 12=l 13=m 14=n);
+  ANALYSIS:   ESTIMATOR = ml;
+              MODEL = nocovariances;
+  MODEL:
+              t1 by *t1p1(l1);
+              t1 by t1p2(l2);
+              t1 by t1p3(l3);
+              t2 by *t2p1(l1);
+              t2 by t2p2(l2);
+              t2 by t2p3(l3);
+              t1@1; t2;
+              t1 with t2;
+              t1p1 with t2p1;
+              t1p2 with t2p2;
+              t1p3 with t2p3;
+  MODEL a:
+              t1 by *t1p1(al1);
+              t1 by t1p2(al2);
+              t1 by t1p3(al3);
+              t2 by *t2p1(al1);
+              t2 by t2p2(al2);
+              t2 by t2p3(al3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL b:
+              t1 by *t1p1(bl1);
+              t1 by t1p2(bl2);
+              t1 by t1p3(bl3);
+              t2 by *t2p1(bl1);
+              t2 by t2p2(bl2);
+              t2 by t2p3(bl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+  MODEL c:
+              t1 by *t1p1(cl1);
+              t1 by t1p2(cl2);
+              t1 by t1p3(cl3);
+              t2 by *t2p1(cl1);
+              t2 by t2p2(cl2);
+              t2 by t2p3(cl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL d:
+              t1 by *t1p1(dl1);
+              t1 by t1p2(dl2);
+              t1 by t1p3(dl3);
+              t2 by *t2p1(dl1);
+              t2 by t2p2(dl2);
+              t2 by t2p3(dl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL e:
+              t1 by *t1p1(el1);
+              t1 by t1p2(el2);
+              t1 by t1p3(el3);
+              t2 by *t2p1(el1);
+              t2 by t2p2(el2);
+              t2 by t2p3(el3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+  MODEL f:
+              t1 by *t1p1(fl1);
+              t1 by t1p2(fl2);
+              t1 by t1p3(fl3);
+              t2 by *t2p1(fl1);
+              t2 by t2p2(fl2);
+              t2 by t2p3(fl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL g:
+              t1 by *t1p1(gl1);
+              t1 by t1p2(gl2);
+              t1 by t1p3(gl3);
+              t2 by *t2p1(gl1);
+              t2 by t2p2(gl2);
+              t2 by t2p3(gl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL h:
+              t1 by *t1p1(hl1);
+              t1 by t1p2(hl2);
+              t1 by t1p3(hl3);
+              t2 by *t2p1(hl1);
+              t2 by t2p2(hl2);
+              t2 by t2p3(hl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL i:
+              t1 by *t1p1(il1);
+              t1 by t1p2(il2);
+              t1 by t1p3(il3);
+              t2 by *t2p1(il1);
+              t2 by t2p2(il2);
+              t2 by t2p3(il3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL j:
+              t1 by *t1p1(jl1);
+              t1 by t1p2(jl2);
+              t1 by t1p3(jl3);
+              t2 by *t2p1(jl1);
+              t2 by t2p2(jl2);
+              t2 by t2p3(jl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL k:
+              t1 by *t1p1(kl1);
+              t1 by t1p2(kl2);
+              t1 by t1p3(kl3);
+              t2 by *t2p1(kl1);
+              t2 by t2p2(kl2);
+              t2 by t2p3(kl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL l:
+              t1 by *t1p1(ll1);
+              t1 by t1p2(ll2);
+              t1 by t1p3(ll3);
+              t2 by *t2p1(ll1);
+              t2 by t2p2(ll2);
+              t2 by t2p3(ll3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL m:
+              t1 by *t1p1(ml1);
+              t1 by t1p2(ml2);
+              t1 by t1p3(ml3);
+              t2 by *t2p1(ml1);
+              t2 by t2p2(ml2);
+              t2 by t2p3(ml3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  MODEL n:
+              t1 by *t1p1(nl1);
+              t1 by t1p2(nl2);
+              t1 by t1p3(nl3);
+              t2 by *t2p1(nl1);
+              t2 by t2p2(nl2);
+              t2 by t2p3(nl3);
+              t1@1; t2;
+                    [t1@0];[t2@0];
+              [t1p1 t2p1];
+              [t1p2 t2p2];
+              [t1p3 t2p3];
+
+  OUTPUT: sampstat; stand;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  447
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+HILDA Extraversion Multigroup Model Model 2 (Time Metric Invariance);
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                14
+Number of observations
+   Group A                                                     918
+   Group B                                                     776
+   Group C                                                     717
+   Group D                                                     916
+   Group E                                                     993
+   Group F                                                    1081
+   Group G                                                    1008
+   Group H                                                     840
+   Group I                                                     783
+   Group J                                                     639
+   Group K                                                     490
+   Group L                                                     410
+   Group M                                                     316
+   Group N                                                     196
+
+Number of dependent variables                                    6
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   T1P1        T1P2        T1P3        T2P1        T2P2        T2P3
+
+Continuous latent variables
+   T1          T2
+
+Variables with special functions
+
+  Grouping variable     AGE
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  /home/rich/Dropbox/HILDA09/Mplus/Auto/eParcels.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+   Group A
+     Number of missing data patterns            19
+
+   Group B
+     Number of missing data patterns            15
+
+   Group C
+     Number of missing data patterns            12
+
+   Group D
+     Number of missing data patterns            13
+
+   Group E
+     Number of missing data patterns            19
+
+   Group F
+     Number of missing data patterns            13
+
+   Group G
+     Number of missing data patterns            15
+
+   Group H
+     Number of missing data patterns            16
+
+   Group I
+     Number of missing data patterns            15
+
+   Group J
+     Number of missing data patterns            20
+
+   Group K
+     Number of missing data patterns            16
+
+   Group L
+     Number of missing data patterns            16
+
+   Group M
+     Number of missing data patterns            17
+
+   Group N
+     Number of missing data patterns            19
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR A
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.918
+ T1P2           0.888         0.891
+ T1P3           0.908         0.887         0.915
+ T2P1           0.747         0.727         0.743         0.827
+ T2P2           0.737         0.716         0.732         0.813         0.814
+ T2P3           0.748         0.729         0.745         0.821         0.814
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.828
+
+
+     PROPORTION OF DATA PRESENT FOR B
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.890
+ T1P2           0.876         0.879
+ T1P3           0.890         0.879         0.901
+ T2P1           0.753         0.744         0.760         0.860
+ T2P2           0.746         0.740         0.754         0.848         0.849
+ T2P3           0.760         0.751         0.768         0.858         0.848
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.867
+
+
+     PROPORTION OF DATA PRESENT FOR C
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.915
+ T1P2           0.905         0.908
+ T1P3           0.915         0.907         0.919
+ T2P1           0.794         0.788         0.798         0.877
+ T2P2           0.791         0.785         0.795         0.873         0.874
+ T2P3           0.801         0.795         0.805         0.877         0.874
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.886
+
+
+     PROPORTION OF DATA PRESENT FOR D
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.928
+ T1P2           0.918         0.920
+ T1P3           0.927         0.919         0.932
+ T2P1           0.836         0.830         0.841         0.907
+ T2P2           0.832         0.825         0.836         0.901         0.901
+ T2P3           0.836         0.830         0.841         0.905         0.898
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.907
+
+
+     PROPORTION OF DATA PRESENT FOR E
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.923
+ T1P2           0.913         0.914
+ T1P3           0.918         0.912         0.927
+ T2P1           0.835         0.827         0.838         0.908
+ T2P2           0.824         0.818         0.828         0.896         0.896
+ T2P3           0.837         0.830         0.842         0.906         0.895
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.912
+
+
+     PROPORTION OF DATA PRESENT FOR F
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.955
+ T1P2           0.947         0.948
+ T1P3           0.948         0.942         0.954
+ T2P1           0.878         0.871         0.876         0.922
+ T2P2           0.875         0.869         0.874         0.918         0.920
+ T2P3           0.883         0.876         0.881         0.921         0.917
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.927
+
+
+     PROPORTION OF DATA PRESENT FOR G
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.956
+ T1P2           0.950         0.951
+ T1P3           0.953         0.947         0.962
+ T2P1           0.885         0.881         0.892         0.929
+ T2P2           0.883         0.879         0.890         0.925         0.927
+ T2P3           0.889         0.885         0.896         0.927         0.924
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.932
+
+
+     PROPORTION OF DATA PRESENT FOR H
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.939
+ T1P2           0.930         0.930
+ T1P3           0.932         0.923         0.939
+ T2P1           0.881         0.871         0.881         0.939
+ T2P2           0.882         0.873         0.882         0.933         0.939
+ T2P3           0.887         0.879         0.887         0.933         0.932
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.948
+
+
+     PROPORTION OF DATA PRESENT FOR I
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.934
+ T1P2           0.920         0.920
+ T1P3           0.928         0.916         0.934
+ T2P1           0.875         0.861         0.874         0.937
+ T2P2           0.870         0.858         0.868         0.928         0.931
+ T2P3           0.880         0.866         0.880         0.936         0.930
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.946
+
+
+     PROPORTION OF DATA PRESENT FOR J
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.953
+ T1P2           0.937         0.941
+ T1P3           0.945         0.930         0.961
+ T2P1           0.906         0.897         0.912         0.950
+ T2P2           0.892         0.884         0.898         0.933         0.936
+ T2P3           0.908         0.898         0.914         0.941         0.926
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.950
+
+
+     PROPORTION OF DATA PRESENT FOR K
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.959
+ T1P2           0.941         0.945
+ T1P3           0.943         0.927         0.967
+ T2P1           0.892         0.882         0.898         0.929
+ T2P2           0.876         0.869         0.882         0.906         0.910
+ T2P3           0.908         0.898         0.916         0.922         0.904
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.947
+
+
+     PROPORTION OF DATA PRESENT FOR L
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.956
+ T1P2           0.929         0.934
+ T1P3           0.937         0.910         0.946
+ T2P1           0.866         0.849         0.854         0.902
+ T2P2           0.861         0.846         0.849         0.888         0.895
+ T2P3           0.878         0.861         0.866         0.902         0.895
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.917
+
+
+     PROPORTION OF DATA PRESENT FOR M
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.940
+ T1P2           0.915         0.915
+ T1P3           0.899         0.877         0.918
+ T2P1           0.804         0.785         0.772         0.854
+ T2P2           0.772         0.759         0.744         0.820         0.823
+ T2P3           0.791         0.775         0.766         0.829         0.807
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.839
+
+
+     PROPORTION OF DATA PRESENT FOR N
+
+
+           Covariance Coverage
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           0.903
+ T1P2           0.872         0.888
+ T1P3           0.878         0.867         0.903
+ T2P1           0.719         0.699         0.704         0.801
+ T2P2           0.699         0.684         0.689         0.770         0.781
+ T2P3           0.709         0.694         0.699         0.776         0.750
+
+
+           Covariance Coverage
+              T2P3
+              ________
+ T2P3           0.786
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS FOR A
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.904         4.197         4.994         4.691         4.188
+
+
+           Means
+              T2P3
+              ________
+      1         4.900
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.561
+ T1P2           0.917         1.727
+ T1P3           0.676         0.591         1.162
+ T2P1           0.739         0.626         0.464         1.412
+ T2P2           0.734         0.845         0.445         0.958         1.690
+ T2P3           0.449         0.451         0.525         0.701         0.700
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.174
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.558         1.000
+ T1P3           0.502         0.417         1.000
+ T2P1           0.498         0.401         0.362         1.000
+ T2P2           0.452         0.495         0.317         0.620         1.000
+ T2P3           0.332         0.316         0.450         0.544         0.497
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR B
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.731         4.092         4.827         4.590         4.136
+
+
+           Means
+              T2P3
+              ________
+      1         4.784
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.569
+ T1P2           1.108         1.821
+ T1P3           0.849         0.787         1.265
+ T2P1           0.869         0.777         0.573         1.451
+ T2P2           0.863         1.162         0.585         1.007         1.767
+ T2P3           0.631         0.662         0.694         0.812         0.803
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.249
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.656         1.000
+ T1P3           0.602         0.518         1.000
+ T2P1           0.576         0.478         0.423         1.000
+ T2P2           0.518         0.648         0.391         0.629         1.000
+ T2P3           0.451         0.439         0.552         0.603         0.540
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR C
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.625         4.138         4.801         4.484         4.084
+
+
+           Means
+              T2P3
+              ________
+      1         4.775
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.399
+ T1P2           1.001         1.806
+ T1P3           0.761         0.853         1.268
+ T2P1           0.935         0.932         0.653         1.567
+ T2P2           0.916         1.330         0.726         1.137         1.974
+ T2P3           0.647         0.744         0.775         0.872         0.971
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.317
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.630         1.000
+ T1P3           0.572         0.564         1.000
+ T2P1           0.632         0.554         0.464         1.000
+ T2P2           0.551         0.704         0.459         0.647         1.000
+ T2P3           0.477         0.482         0.600         0.607         0.602
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR D
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.553         4.118         4.685         4.455         4.091
+
+
+           Means
+              T2P3
+              ________
+      1         4.695
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.486
+ T1P2           1.127         1.958
+ T1P3           0.888         1.021         1.411
+ T2P1           0.984         1.019         0.796         1.525
+ T2P2           1.015         1.407         0.897         1.245         2.023
+ T2P3           0.756         0.877         0.934         0.970         1.121
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.460
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.661         1.000
+ T1P3           0.613         0.615         1.000
+ T2P1           0.654         0.590         0.543         1.000
+ T2P2           0.585         0.707         0.531         0.709         1.000
+ T2P3           0.513         0.519         0.651         0.650         0.653
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR E
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.532         4.122         4.740         4.439         4.072
+
+
+           Means
+              T2P3
+              ________
+      1         4.750
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.365
+ T1P2           0.917         1.819
+ T1P3           0.884         0.994         1.496
+ T2P1           0.917         0.829         0.765         1.396
+ T2P2           0.840         1.186         0.897         1.037         1.785
+ T2P3           0.778         0.820         1.020         0.913         1.074
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.464
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.582         1.000
+ T1P3           0.618         0.602         1.000
+ T2P1           0.664         0.520         0.530         1.000
+ T2P2           0.538         0.658         0.549         0.657         1.000
+ T2P3           0.550         0.502         0.689         0.639         0.664
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR F
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.380         4.105         4.655         4.350         4.137
+
+
+           Means
+              T2P3
+              ________
+      1         4.702
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.432
+ T1P2           0.999         1.830
+ T1P3           0.895         1.071         1.575
+ T2P1           0.942         0.845         0.796         1.396
+ T2P2           0.892         1.279         0.885         1.014         1.830
+ T2P3           0.774         0.880         1.028         0.897         1.007
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.424
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.617         1.000
+ T1P3           0.596         0.631         1.000
+ T2P1           0.666         0.528         0.537         1.000
+ T2P2           0.551         0.699         0.521         0.634         1.000
+ T2P3           0.542         0.545         0.686         0.636         0.624
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR G
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.370         4.185         4.685         4.333         4.128
+
+
+           Means
+              T2P3
+              ________
+      1         4.679
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.415
+ T1P2           1.025         1.882
+ T1P3           0.915         1.073         1.572
+ T2P1           0.959         0.940         0.802         1.469
+ T2P2           0.875         1.317         0.935         1.005         1.836
+ T2P3           0.727         0.945         1.037         0.909         1.038
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.539
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.628         1.000
+ T1P3           0.614         0.624         1.000
+ T2P1           0.665         0.566         0.528         1.000
+ T2P2           0.543         0.709         0.550         0.612         1.000
+ T2P3           0.493         0.555         0.667         0.605         0.617
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR H
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.265         4.078         4.653         4.297         4.072
+
+
+           Means
+              T2P3
+              ________
+      1         4.673
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.353
+ T1P2           0.879         1.764
+ T1P3           0.825         0.947         1.480
+ T2P1           0.783         0.689         0.666         1.306
+ T2P2           0.789         1.133         0.776         0.855         1.734
+ T2P3           0.683         0.767         0.926         0.785         0.936
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.477
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.569         1.000
+ T1P3           0.583         0.586         1.000
+ T2P1           0.589         0.454         0.479         1.000
+ T2P2           0.515         0.648         0.484         0.568         1.000
+ T2P3           0.483         0.475         0.626         0.566         0.585
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR I
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.344         4.134         4.708         4.261         4.129
+
+
+           Means
+              T2P3
+              ________
+      1         4.716
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.585
+ T1P2           0.956         1.847
+ T1P3           0.874         1.018         1.592
+ T2P1           1.046         0.890         0.788         1.473
+ T2P2           0.832         1.290         0.833         0.899         1.862
+ T2P3           0.776         0.841         1.015         0.868         0.918
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.564
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.558         1.000
+ T1P3           0.550         0.594         1.000
+ T2P1           0.685         0.540         0.514         1.000
+ T2P2           0.484         0.696         0.484         0.543         1.000
+ T2P3           0.493         0.495         0.643         0.572         0.538
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR J
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.257         4.058         4.669         4.214         4.024
+
+
+           Means
+              T2P3
+              ________
+      1         4.680
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.265
+ T1P2           0.764         1.781
+ T1P3           0.721         0.904         1.634
+ T2P1           0.786         0.740         0.632         1.335
+ T2P2           0.708         1.167         0.731         0.822         1.663
+ T2P3           0.630         0.791         0.865         0.762         0.874
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.434
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.509         1.000
+ T1P3           0.501         0.530         1.000
+ T2P1           0.605         0.480         0.428         1.000
+ T2P2           0.488         0.678         0.444         0.552         1.000
+ T2P3           0.467         0.495         0.565         0.551         0.566
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR K
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.255         4.014         4.698         4.162         4.079
+
+
+           Means
+              T2P3
+              ________
+      1         4.742
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.460
+ T1P2           0.818         1.718
+ T1P3           0.769         0.867         1.540
+ T2P1           0.739         0.722         0.709         1.389
+ T2P2           0.731         1.120         0.818         0.788         1.714
+ T2P3           0.581         0.634         0.931         0.694         0.799
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.462
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.517         1.000
+ T1P3           0.513         0.533         1.000
+ T2P1           0.519         0.467         0.485         1.000
+ T2P2           0.462         0.653         0.503         0.511         1.000
+ T2P3           0.397         0.400         0.620         0.487         0.505
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR L
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.196         4.083         4.786         4.109         4.040
+
+
+           Means
+              T2P3
+              ________
+      1         4.783
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.325
+ T1P2           0.704         1.815
+ T1P3           0.670         0.777         1.633
+ T2P1           0.679         0.515         0.628         1.367
+ T2P2           0.642         1.080         0.625         0.663         1.765
+ T2P3           0.571         0.552         0.927         0.659         0.718
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.493
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.454         1.000
+ T1P3           0.456         0.451         1.000
+ T2P1           0.504         0.327         0.421         1.000
+ T2P2           0.420         0.604         0.368         0.427         1.000
+ T2P3           0.406         0.335         0.594         0.461         0.442
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR M
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.114         3.950         4.678         4.053         4.030
+
+
+           Means
+              T2P3
+              ________
+      1         4.658
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.513
+ T1P2           0.614         1.649
+ T1P3           0.844         0.667         1.561
+ T2P1           0.729         0.517         0.450         1.271
+ T2P2           0.415         0.853         0.561         0.556         1.617
+ T2P3           0.575         0.632         0.813         0.595         0.675
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.554
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.389         1.000
+ T1P3           0.549         0.416         1.000
+ T2P1           0.526         0.357         0.319         1.000
+ T2P2           0.265         0.522         0.353         0.388         1.000
+ T2P3           0.375         0.395         0.522         0.424         0.426
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     ESTIMATED SAMPLE STATISTICS FOR N
+
+
+           Means
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+      1         4.096         4.037         4.801         3.831         3.870
+
+
+           Means
+              T2P3
+              ________
+      1         4.628
+
+
+           Covariances
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.512
+ T1P2           0.518         1.652
+ T1P3           0.798         0.739         1.690
+ T2P1           0.656         0.519         0.487         1.200
+ T2P2           0.526         0.909         0.669         0.485         1.565
+ T2P3           0.566         0.819         1.041         0.724         0.947
+
+
+           Covariances
+              T2P3
+              ________
+ T2P3           1.715
+
+
+           Correlations
+              T1P1          T1P2          T1P3          T2P1          T2P2
+              ________      ________      ________      ________      ________
+ T1P1           1.000
+ T1P2           0.328         1.000
+ T1P3           0.499         0.442         1.000
+ T2P1           0.487         0.368         0.342         1.000
+ T2P2           0.342         0.565         0.411         0.354         1.000
+ T2P3           0.352         0.487         0.611         0.504         0.578
+
+
+           Correlations
+              T2P3
+              ________
+ T2P3           1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS  -77134.281
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                      280
+
+Loglikelihood
+
+          H0 Value                      -77193.080
+          H1 Value                      -77134.281
+
+Information Criteria
+
+          Akaike (AIC)                  154946.159
+          Bayesian (BIC)                156967.369
+          Sample-Size Adjusted BIC      156077.569
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            117.596
+          Degrees of Freedom                    98
+          P-Value                           0.0865
+
+Chi-Square Contributions From Each Group
+
+          A                                  8.972
+          B                                 10.129
+          C                                  7.427
+          D                                  3.361
+          E                                  7.409
+          F                                  7.789
+          G                                 12.314
+          H                                  5.307
+          I                                  7.891
+          J                                  6.476
+          K                                  7.274
+          L                                  6.716
+          M                                 13.656
+          N                                 12.876
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.017
+          90 Percent C.I.                    0.000  0.027
+          Probability RMSEA <= .05           1.000
+
+CFI/TLI
+
+          CFI                                0.999
+          TLI                                0.998
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          27394.316
+          Degrees of Freedom                   210
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.018
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group A
+
+ T1       BY
+    T1P1               0.981      0.040     24.771      0.000
+    T1P2               0.929      0.040     23.030      0.000
+    T1P3               0.681      0.032     21.083      0.000
+
+ T2       BY
+    T2P1               0.981      0.040     24.771      0.000
+    T2P2               0.929      0.040     23.030      0.000
+    T2P3               0.681      0.032     21.083      0.000
+
+ T1       WITH
+    T2                 0.720      0.042     17.125      0.000
+
+ T1P1     WITH
+    T2P1               0.039      0.039      0.995      0.320
+
+ T1P2     WITH
+    T2P2               0.208      0.044      4.691      0.000
+
+ T1P3     WITH
+    T2P3               0.210      0.032      6.508      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.903      0.042    116.477      0.000
+    T1P2               4.197      0.046     92.083      0.000
+    T1P3               4.994      0.037    134.819      0.000
+    T2P1               4.692      0.042    110.538      0.000
+    T2P2               4.188      0.046     91.334      0.000
+    T2P3               4.901      0.038    127.603      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.056      0.081     13.083      0.000
+
+ Residual Variances
+    T1P1               0.565      0.056     10.080      0.000
+    T1P2               0.893      0.061     14.548      0.000
+    T1P3               0.714      0.042     16.923      0.000
+    T2P1               0.421      0.050      8.366      0.000
+    T2P2               0.746      0.057     13.031      0.000
+    T2P3               0.680      0.042     16.132      0.000
+
+Group B
+
+ T1       BY
+    T1P1               1.063      0.040     26.399      0.000
+    T1P2               1.017      0.044     23.044      0.000
+    T1P3               0.802      0.036     22.298      0.000
+
+ T2       BY
+    T2P1               1.063      0.040     26.399      0.000
+    T2P2               1.017      0.044     23.044      0.000
+    T2P3               0.802      0.036     22.298      0.000
+
+ T1       WITH
+    T2                 0.740      0.035     20.943      0.000
+
+ T1P1     WITH
+    T2P1               0.047      0.037      1.266      0.205
+
+ T1P2     WITH
+    T2P2               0.359      0.047      7.686      0.000
+
+ T1P3     WITH
+    T2P3               0.232      0.033      6.943      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.730      0.046    102.382      0.000
+    T1P2               4.092      0.050     81.459      0.000
+    T1P3               4.826      0.042    114.021      0.000
+    T2P1               4.591      0.046     99.978      0.000
+    T2P2               4.135      0.050     83.044      0.000
+    T2P3               4.783      0.042    114.492      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.944      0.067     14.138      0.000
+
+ Residual Variances
+    T1P1               0.409      0.050      8.133      0.000
+    T1P2               0.779      0.059     13.146      0.000
+    T1P3               0.652      0.043     15.092      0.000
+    T2P1               0.417      0.049      8.521      0.000
+    T2P2               0.767      0.059     13.064      0.000
+    T2P3               0.622      0.043     14.483      0.000
+
+Group C
+
+ T1       BY
+    T1P1               0.946      0.039     24.478      0.000
+    T1P2               1.058      0.045     23.700      0.000
+    T1P3               0.808      0.036     22.264      0.000
+
+ T2       BY
+    T2P1               0.946      0.039     24.478      0.000
+    T2P2               1.058      0.045     23.700      0.000
+    T2P3               0.808      0.036     22.264      0.000
+
+ T1       WITH
+    T2                 0.888      0.036     24.357      0.000
+
+ T1P1     WITH
+    T2P1               0.129      0.037      3.508      0.000
+
+ T1P2     WITH
+    T2P2               0.313      0.047      6.615      0.000
+
+ T1P3     WITH
+    T2P3               0.231      0.034      6.807      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.625      0.045    102.019      0.000
+    T1P2               4.137      0.051     80.731      0.000
+    T1P3               4.801      0.043    110.753      0.000
+    T2P1               4.484      0.048     92.513      0.000
+    T2P2               4.083      0.054     75.296      0.000
+    T2P3               4.775      0.045    107.043      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.139      0.075     15.170      0.000
+
+ Residual Variances
+    T1P1               0.504      0.046     11.041      0.000
+    T1P2               0.673      0.058     11.538      0.000
+    T1P3               0.628      0.044     14.325      0.000
+    T2P1               0.542      0.050     10.944      0.000
+    T2P2               0.694      0.062     11.266      0.000
+    T2P3               0.585      0.043     13.495      0.000
+
+Group D
+
+ T1       BY
+    T1P1               0.991      0.033     29.599      0.000
+    T1P2               1.142      0.039     29.215      0.000
+    T1P3               0.895      0.033     27.149      0.000
+
+ T2       BY
+    T2P1               0.991      0.033     29.599      0.000
+    T2P2               1.142      0.039     29.215      0.000
+    T2P3               0.895      0.033     27.149      0.000
+
+ T1       WITH
+    T2                 0.884      0.029     30.693      0.000
+
+ T1P1     WITH
+    T2P1               0.107      0.029      3.734      0.000
+
+ T1P2     WITH
+    T2P2               0.248      0.038      6.455      0.000
+
+ T1P3     WITH
+    T2P3               0.243      0.030      8.123      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.552      0.041    110.681      0.000
+    T1P2               4.118      0.047     87.217      0.000
+    T1P3               4.684      0.040    117.126      0.000
+    T2P1               4.455      0.042    106.524      0.000
+    T2P2               4.090      0.048     84.996      0.000
+    T2P3               4.695      0.041    114.029      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.099      0.059     18.744      0.000
+
+ Residual Variances
+    T1P1               0.505      0.038     13.220      0.000
+    T1P2               0.655      0.050     13.169      0.000
+    T1P3               0.609      0.038     15.936      0.000
+    T2P1               0.442      0.036     12.207      0.000
+    T2P2               0.583      0.048     12.217      0.000
+    T2P3               0.593      0.038     15.714      0.000
+
+Group E
+
+ T1       BY
+    T1P1               0.905      0.032     28.691      0.000
+    T1P2               1.045      0.036     28.786      0.000
+    T1P3               0.954      0.033     28.730      0.000
+
+ T2       BY
+    T2P1               0.905      0.032     28.691      0.000
+    T2P2               1.045      0.036     28.786      0.000
+    T2P3               0.954      0.033     28.730      0.000
+
+ T1       WITH
+    T2                 0.880      0.028     31.047      0.000
+
+ T1P1     WITH
+    T2P1               0.183      0.027      6.672      0.000
+
+ T1P2     WITH
+    T2P2               0.245      0.036      6.783      0.000
+
+ T1P3     WITH
+    T2P3               0.220      0.029      7.598      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.532      0.038    119.875      0.000
+    T1P2               4.122      0.044     92.887      0.000
+    T1P3               4.740      0.039    120.656      0.000
+    T2P1               4.439      0.038    115.412      0.000
+    T2P2               4.072      0.043     93.968      0.000
+    T2P3               4.751      0.040    119.996      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.077      0.056     19.077      0.000
+
+ Residual Variances
+    T1P1               0.540      0.036     14.839      0.000
+    T1P2               0.771      0.050     15.309      0.000
+    T1P3               0.563      0.039     14.387      0.000
+    T2P1               0.512      0.035     14.762      0.000
+    T2P2               0.587      0.043     13.610      0.000
+    T2P3               0.504      0.036     14.076      0.000
+
+Group F
+
+ T1       BY
+    T1P1               0.937      0.031     30.273      0.000
+    T1P2               1.083      0.036     30.400      0.000
+    T1P3               0.965      0.033     29.644      0.000
+
+ T2       BY
+    T2P1               0.937      0.031     30.273      0.000
+    T2P2               1.083      0.036     30.400      0.000
+    T2P3               0.965      0.033     29.644      0.000
+
+ T1       WITH
+    T2                 0.854      0.025     34.244      0.000
+
+ T1P1     WITH
+    T2P1               0.183      0.027      6.755      0.000
+
+ T1P2     WITH
+    T2P2               0.289      0.035      8.209      0.000
+
+ T1P3     WITH
+    T2P3               0.229      0.029      7.900      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.380      0.037    118.289      0.000
+    T1P2               4.105      0.042     98.420      0.000
+    T1P3               4.655      0.038    121.244      0.000
+    T2P1               4.350      0.036    119.273      0.000
+    T2P2               4.137      0.042     98.410      0.000
+    T2P3               4.703      0.037    126.506      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.984      0.048     20.549      0.000
+
+ Residual Variances
+    T1P1               0.568      0.036     15.775      0.000
+    T1P2               0.662      0.045     14.744      0.000
+    T1P3               0.624      0.039     15.933      0.000
+    T2P1               0.514      0.034     15.120      0.000
+    T2P2               0.681      0.045     15.223      0.000
+    T2P3               0.521      0.035     14.959      0.000
+
+Group G
+
+ T1       BY
+    T1P1               0.939      0.032     29.082      0.000
+    T1P2               1.095      0.037     29.393      0.000
+    T1P3               0.977      0.034     28.974      0.000
+
+ T2       BY
+    T2P1               0.939      0.032     29.082      0.000
+    T2P2               1.095      0.037     29.393      0.000
+    T2P3               0.977      0.034     28.974      0.000
+
+ T1       WITH
+    T2                 0.867      0.025     34.145      0.000
+
+ T1P1     WITH
+    T2P1               0.203      0.029      6.972      0.000
+
+ T1P2     WITH
+    T2P2               0.250      0.037      6.728      0.000
+
+ T1P3     WITH
+    T2P3               0.224      0.031      7.137      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.370      0.038    114.478      0.000
+    T1P2               4.184      0.043     96.332      0.000
+    T1P3               4.684      0.040    117.531      0.000
+    T2P1               4.333      0.039    112.013      0.000
+    T2P2               4.128      0.044     94.803      0.000
+    T2P3               4.679      0.040    117.101      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.978      0.048     20.179      0.000
+
+ Residual Variances
+    T1P1               0.555      0.036     15.312      0.000
+    T1P2               0.659      0.047     14.065      0.000
+    T1P3               0.616      0.040     15.378      0.000
+    T2P1               0.589      0.039     15.297      0.000
+    T2P2               0.668      0.047     14.096      0.000
+    T2P3               0.618      0.041     15.256      0.000
+
+Group H
+
+ T1       BY
+    T1P1               0.869      0.035     24.732      0.000
+    T1P2               1.013      0.041     24.792      0.000
+    T1P3               0.939      0.037     25.141      0.000
+
+ T2       BY
+    T2P1               0.869      0.035     24.732      0.000
+    T2P2               1.013      0.041     24.792      0.000
+    T2P3               0.939      0.037     25.141      0.000
+
+ T1       WITH
+    T2                 0.826      0.032     25.992      0.000
+
+ T1P1     WITH
+    T2P1               0.149      0.032      4.628      0.000
+
+ T1P2     WITH
+    T2P2               0.288      0.042      6.856      0.000
+
+ T1P3     WITH
+    T2P3               0.209      0.035      5.934      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.266      0.041    105.011      0.000
+    T1P2               4.078      0.047     86.745      0.000
+    T1P3               4.653      0.043    108.869      0.000
+    T2P1               4.297      0.040    106.326      0.000
+    T2P2               4.072      0.046     88.538      0.000
+    T2P3               4.673      0.043    109.541      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.977      0.061     16.139      0.000
+
+ Residual Variances
+    T1P1               0.578      0.042     13.754      0.000
+    T1P2               0.757      0.055     13.758      0.000
+    T1P3               0.600      0.046     13.120      0.000
+    T2P1               0.583      0.042     14.036      0.000
+    T2P2               0.714      0.053     13.346      0.000
+    T2P3               0.622      0.046     13.533      0.000
+
+Group I
+
+ T1       BY
+    T1P1               0.934      0.041     22.999      0.000
+    T1P2               1.032      0.045     23.088      0.000
+    T1P3               0.962      0.041     23.739      0.000
+
+ T2       BY
+    T2P1               0.934      0.041     22.999      0.000
+    T2P2               1.032      0.045     23.088      0.000
+    T2P3               0.962      0.041     23.739      0.000
+
+ T1       WITH
+    T2                 0.871      0.030     29.220      0.000
+
+ T1P1     WITH
+    T2P1               0.272      0.040      6.787      0.000
+
+ T1P2     WITH
+    T2P2               0.365      0.049      7.401      0.000
+
+ T1P3     WITH
+    T2P3               0.224      0.041      5.430      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.344      0.046     94.180      0.000
+    T1P2               4.134      0.049     83.900      0.000
+    T1P3               4.708      0.046    102.330      0.000
+    T2P1               4.261      0.044     97.535      0.000
+    T2P2               4.129      0.050     82.450      0.000
+    T2P3               4.715      0.045    103.784      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.942      0.055     16.990      0.000
+
+ Residual Variances
+    T1P1               0.734      0.053     13.847      0.000
+    T1P2               0.758      0.060     12.643      0.000
+    T1P3               0.672      0.053     12.782      0.000
+    T2P1               0.624      0.048     12.908      0.000
+    T2P2               0.889      0.064     13.946      0.000
+    T2P3               0.697      0.053     13.202      0.000
+
+Group J
+
+ T1       BY
+    T1P1               0.812      0.040     20.177      0.000
+    T1P2               0.971      0.049     19.962      0.000
+    T1P3               0.895      0.045     20.005      0.000
+
+ T2       BY
+    T2P1               0.812      0.040     20.177      0.000
+    T2P2               0.971      0.049     19.962      0.000
+    T2P3               0.895      0.045     20.005      0.000
+
+ T1       WITH
+    T2                 0.889      0.039     22.914      0.000
+
+ T1P1     WITH
+    T2P1               0.194      0.038      5.077      0.000
+
+ T1P2     WITH
+    T2P2               0.316      0.052      6.093      0.000
+
+ T1P3     WITH
+    T2P3               0.170      0.045      3.769      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.257      0.045     93.574      0.000
+    T1P2               4.059      0.053     76.141      0.000
+    T1P3               4.668      0.051     91.160      0.000
+    T2P1               4.214      0.046     91.557      0.000
+    T2P2               4.023      0.052     77.236      0.000
+    T2P3               4.680      0.048     97.028      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.026      0.074     13.947      0.000
+
+ Residual Variances
+    T1P1               0.626      0.050     12.562      0.000
+    T1P2               0.814      0.069     11.794      0.000
+    T1P3               0.833      0.065     12.725      0.000
+    T2P1               0.636      0.050     12.673      0.000
+    T2P2               0.708      0.062     11.406      0.000
+    T2P3               0.620      0.054     11.555      0.000
+
+Group K
+
+ T1       BY
+    T1P1               0.861      0.050     17.335      0.000
+    T1P2               0.976      0.056     17.437      0.000
+    T1P3               0.888      0.053     16.882      0.000
+
+ T2       BY
+    T2P1               0.861      0.050     17.335      0.000
+    T2P2               0.976      0.056     17.437      0.000
+    T2P3               0.888      0.053     16.882      0.000
+
+ T1       WITH
+    T2                 0.850      0.044     19.503      0.000
+
+ T1P1     WITH
+    T2P1               0.103      0.049      2.097      0.036
+
+ T1P2     WITH
+    T2P2               0.306      0.062      4.911      0.000
+
+ T1P3     WITH
+    T2P3               0.273      0.054      5.068      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.256      0.056     76.442      0.000
+    T1P2               4.015      0.061     66.129      0.000
+    T1P3               4.698      0.056     84.091      0.000
+    T2P1               4.161      0.054     76.784      0.000
+    T2P2               4.079      0.060     67.935      0.000
+    T2P3               4.741      0.056     83.963      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.920      0.079     11.700      0.000
+
+ Residual Variances
+    T1P1               0.736      0.067     10.960      0.000
+    T1P2               0.799      0.078     10.277      0.000
+    T1P3               0.714      0.068     10.464      0.000
+    T2P1               0.687      0.064     10.671      0.000
+    T2P2               0.800      0.079     10.141      0.000
+    T2P3               0.787      0.070     11.274      0.000
+
+Group L
+
+ T1       BY
+    T1P1               0.798      0.057     14.093      0.000
+    T1P2               0.878      0.067     13.103      0.000
+    T1P3               0.858      0.063     13.552      0.000
+
+ T2       BY
+    T2P1               0.798      0.057     14.093      0.000
+    T2P2               0.878      0.067     13.103      0.000
+    T2P3               0.858      0.063     13.552      0.000
+
+ T1       WITH
+    T2                 0.828      0.058     14.302      0.000
+
+ T1P1     WITH
+    T2P1               0.136      0.060      2.267      0.023
+
+ T1P2     WITH
+    T2P2               0.462      0.080      5.741      0.000
+
+ T1P3     WITH
+    T2P3               0.318      0.070      4.573      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.197      0.058     72.759      0.000
+    T1P2               4.083      0.068     59.725      0.000
+    T1P3               4.784      0.064     74.925      0.000
+    T2P1               4.110      0.060     68.591      0.000
+    T2P2               4.040      0.068     59.516      0.000
+    T2P3               4.785      0.062     76.728      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.965      0.106      9.124      0.000
+
+ Residual Variances
+    T1P1               0.684      0.077      8.939      0.000
+    T1P2               1.063      0.104     10.239      0.000
+    T1P3               0.879      0.093      9.478      0.000
+    T2P1               0.752      0.080      9.374      0.000
+    T2P2               1.015      0.101     10.012      0.000
+    T2P3               0.797      0.087      9.197      0.000
+
+Group M
+
+ T1       BY
+    T1P1               0.834      0.073     11.443      0.000
+    T1P2               0.768      0.074     10.442      0.000
+    T1P3               0.957      0.078     12.290      0.000
+
+ T2       BY
+    T2P1               0.834      0.073     11.443      0.000
+    T2P2               0.768      0.074     10.442      0.000
+    T2P3               0.957      0.078     12.290      0.000
+
+ T1       WITH
+    T2                 0.706      0.067     10.534      0.000
+
+ T1P1     WITH
+    T2P1               0.271      0.075      3.603      0.000
+
+ T1P2     WITH
+    T2P2               0.381      0.087      4.367      0.000
+
+ T1P3     WITH
+    T2P3               0.168      0.088      1.900      0.057
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.114      0.070     58.783      0.000
+    T1P2               3.948      0.075     52.459      0.000
+    T1P3               4.679      0.073     64.300      0.000
+    T2P1               4.049      0.068     59.197      0.000
+    T2P2               4.031      0.075     53.482      0.000
+    T2P3               4.658      0.074     62.668      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 0.813      0.113      7.176      0.000
+
+ Residual Variances
+    T1P1               0.788      0.099      8.002      0.000
+    T1P2               1.087      0.112      9.702      0.000
+    T1P3               0.666      0.113      5.885      0.000
+    T2P1               0.756      0.097      7.795      0.000
+    T2P2               1.068      0.115      9.316      0.000
+    T2P3               0.793      0.117      6.771      0.000
+
+Group N
+
+ T1       BY
+    T1P1               0.643      0.084      7.624      0.000
+    T1P2               0.755      0.094      8.008      0.000
+    T1P3               1.068      0.104     10.267      0.000
+
+ T2       BY
+    T2P1               0.643      0.084      7.624      0.000
+    T2P2               0.755      0.094      8.008      0.000
+    T2P3               1.068      0.104     10.267      0.000
+
+ T1       WITH
+    T2                 0.862      0.103      8.333      0.000
+
+ T1P1     WITH
+    T2P1               0.304      0.099      3.053      0.002
+
+ T1P2     WITH
+    T2P2               0.338      0.111      3.043      0.002
+
+ T1P3     WITH
+    T2P3               0.088      0.132      0.665      0.506
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.095      0.089     45.916      0.000
+    T1P2               4.042      0.095     42.383      0.000
+    T1P3               4.800      0.097     49.451      0.000
+    T2P1               3.827      0.087     44.008      0.000
+    T2P2               3.871      0.097     40.062      0.000
+    T2P3               4.623      0.100     46.402      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.120      0.189      5.914      0.000
+
+ Residual Variances
+    T1P1               1.030      0.131      7.871      0.000
+    T1P2               1.068      0.149      7.158      0.000
+    T1P3               0.595      0.184      3.241      0.001
+    T2P1               0.796      0.109      7.311      0.000
+    T2P2               0.900      0.133      6.751      0.000
+    T2P3               0.407      0.177      2.295      0.022
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group A
+
+ T1       BY
+    T1P1               0.794      0.023     34.991      0.000
+    T1P2               0.701      0.022     31.572      0.000
+    T1P3               0.627      0.023     27.155      0.000
+
+ T2       BY
+    T2P1               0.841      0.021     40.908      0.000
+    T2P2               0.742      0.023     32.944      0.000
+    T2P3               0.647      0.024     27.362      0.000
+
+ T1       WITH
+    T2                 0.701      0.030     23.516      0.000
+
+ T1P1     WITH
+    T2P1               0.080      0.076      1.049      0.294
+
+ T1P2     WITH
+    T2P2               0.255      0.048      5.376      0.000
+
+ T1P3     WITH
+    T2P3               0.301      0.040      7.462      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.966      0.099     40.193      0.000
+    T1P2               3.167      0.082     38.481      0.000
+    T1P3               4.603      0.112     41.100      0.000
+    T2P1               3.913      0.104     37.554      0.000
+    T2P2               3.253      0.087     37.252      0.000
+    T2P3               4.533      0.115     39.560      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.370      0.036     10.260      0.000
+    T1P2               0.509      0.031     16.341      0.000
+    T1P3               0.607      0.029     20.931      0.000
+    T2P1               0.293      0.035      8.459      0.000
+    T2P2               0.450      0.033     13.486      0.000
+    T2P3               0.582      0.031     19.024      0.000
+
+Group B
+
+ T1       BY
+    T1P1               0.857      0.019     44.602      0.000
+    T1P2               0.755      0.021     35.927      0.000
+    T1P3               0.705      0.021     33.014      0.000
+
+ T2       BY
+    T2P1               0.848      0.019     44.408      0.000
+    T2P2               0.749      0.022     34.585      0.000
+    T2P3               0.703      0.023     31.188      0.000
+
+ T1       WITH
+    T2                 0.762      0.025     30.895      0.000
+
+ T1P1     WITH
+    T2P1               0.115      0.083      1.375      0.169
+
+ T1P2     WITH
+    T2P2               0.465      0.043     10.860      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.042      8.597      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.812      0.105     36.149      0.000
+    T1P2               3.038      0.087     34.933      0.000
+    T1P3               4.240      0.114     37.156      0.000
+    T2P1               3.768      0.106     35.446      0.000
+    T2P2               3.132      0.089     35.192      0.000
+    T2P3               4.313      0.115     37.560      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.265      0.033      8.058      0.000
+    T1P2               0.430      0.032     13.525      0.000
+    T1P3               0.503      0.030     16.719      0.000
+    T2P1               0.281      0.032      8.668      0.000
+    T2P2               0.440      0.032     13.569      0.000
+    T2P3               0.506      0.032     15.965      0.000
+
+Group C
+
+ T1       BY
+    T1P1               0.800      0.020     39.874      0.000
+    T1P2               0.790      0.020     38.571      0.000
+    T1P3               0.714      0.022     32.890      0.000
+
+ T2       BY
+    T2P1               0.808      0.020     41.224      0.000
+    T2P2               0.805      0.020     40.836      0.000
+    T2P3               0.748      0.021     35.721      0.000
+
+ T1       WITH
+    T2                 0.832      0.020     41.773      0.000
+
+ T1P1     WITH
+    T2P1               0.246      0.059      4.156      0.000
+
+ T1P2     WITH
+    T2P2               0.458      0.047      9.710      0.000
+
+ T1P3     WITH
+    T2P3               0.381      0.044      8.688      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.910      0.109     35.740      0.000
+    T1P2               3.090      0.090     34.296      0.000
+    T1P3               4.243      0.116     36.635      0.000
+    T2P1               3.589      0.103     34.716      0.000
+    T2P2               2.910      0.088     33.211      0.000
+    T2P3               4.144      0.117     35.311      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.361      0.032     11.242      0.000
+    T1P2               0.375      0.032     11.593      0.000
+    T1P3               0.491      0.031     15.844      0.000
+    T2P1               0.347      0.032     10.964      0.000
+    T2P2               0.353      0.032     11.116      0.000
+    T2P3               0.440      0.031     14.061      0.000
+
+Group D
+
+ T1       BY
+    T1P1               0.812      0.016     52.015      0.000
+    T1P2               0.816      0.016     52.378      0.000
+    T1P3               0.754      0.017     43.898      0.000
+
+ T2       BY
+    T2P1               0.842      0.014     58.225      0.000
+    T2P2               0.843      0.014     58.168      0.000
+    T2P3               0.773      0.016     47.395      0.000
+
+ T1       WITH
+    T2                 0.843      0.015     54.442      0.000
+
+ T1P1     WITH
+    T2P1               0.225      0.052      4.333      0.000
+
+ T1P2     WITH
+    T2P2               0.402      0.046      8.817      0.000
+
+ T1P3     WITH
+    T2P3               0.404      0.038     10.618      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.734      0.091     40.840      0.000
+    T1P2               2.941      0.076     38.787      0.000
+    T1P3               3.945      0.095     41.382      0.000
+    T2P1               3.614      0.091     39.835      0.000
+    T2P2               2.880      0.076     37.970      0.000
+    T2P3               3.869      0.096     40.202      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.340      0.025     13.392      0.000
+    T1P2               0.334      0.025     13.151      0.000
+    T1P3               0.432      0.026     16.689      0.000
+    T2P1               0.291      0.024     11.924      0.000
+    T2P2               0.289      0.024     11.828      0.000
+    T2P3               0.403      0.025     15.983      0.000
+
+Group E
+
+ T1       BY
+    T1P1               0.776      0.017     46.441      0.000
+    T1P2               0.765      0.017     46.196      0.000
+    T1P3               0.786      0.017     47.091      0.000
+
+ T2       BY
+    T2P1               0.796      0.016     50.453      0.000
+    T2P2               0.817      0.015     52.939      0.000
+    T2P3               0.813      0.015     53.952      0.000
+
+ T1       WITH
+    T2                 0.848      0.015     55.745      0.000
+
+ T1P1     WITH
+    T2P1               0.348      0.041      8.553      0.000
+
+ T1P2     WITH
+    T2P2               0.365      0.041      8.817      0.000
+
+ T1P3     WITH
+    T2P3               0.412      0.039     10.531      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.888      0.091     42.668      0.000
+    T1P2               3.020      0.074     40.745      0.000
+    T1P3               3.904      0.091     42.695      0.000
+    T2P1               3.760      0.090     41.621      0.000
+    T2P2               3.067      0.076     40.177      0.000
+    T2P3               3.898      0.094     41.454      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.397      0.026     15.306      0.000
+    T1P2               0.414      0.025     16.320      0.000
+    T1P3               0.382      0.026     14.553      0.000
+    T2P1               0.367      0.025     14.625      0.000
+    T2P2               0.333      0.025     13.209      0.000
+    T2P3               0.339      0.024     13.858      0.000
+
+Group F
+
+ T1       BY
+    T1P1               0.779      0.016     50.102      0.000
+    T1P2               0.799      0.015     51.940      0.000
+    T1P3               0.774      0.016     48.237      0.000
+
+ T2       BY
+    T2P1               0.792      0.016     50.597      0.000
+    T2P2               0.793      0.015     51.710      0.000
+    T2P3               0.799      0.015     52.627      0.000
+
+ T1       WITH
+    T2                 0.861      0.014     63.528      0.000
+
+ T1P1     WITH
+    T2P1               0.339      0.039      8.665      0.000
+
+ T1P2     WITH
+    T2P2               0.430      0.037     11.699      0.000
+
+ T1P3     WITH
+    T2P3               0.402      0.037     10.835      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.642      0.082     44.196      0.000
+    T1P2               3.031      0.071     42.525      0.000
+    T1P3               3.732      0.084     44.644      0.000
+    T2P1               3.706      0.085     43.745      0.000
+    T2P2               3.055      0.072     42.292      0.000
+    T2P3               3.922      0.090     43.615      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.393      0.024     16.204      0.000
+    T1P2               0.361      0.025     14.670      0.000
+    T1P3               0.401      0.025     16.161      0.000
+    T2P1               0.373      0.025     15.035      0.000
+    T2P2               0.371      0.024     15.260      0.000
+    T2P3               0.362      0.024     14.946      0.000
+
+Group G
+
+ T1       BY
+    T1P1               0.783      0.016     49.058      0.000
+    T1P2               0.803      0.016     50.343      0.000
+    T1P3               0.779      0.016     48.081      0.000
+
+ T2       BY
+    T2P1               0.771      0.017     45.922      0.000
+    T2P2               0.798      0.016     49.554      0.000
+    T2P3               0.776      0.016     47.100      0.000
+
+ T1       WITH
+    T2                 0.877      0.014     64.624      0.000
+
+ T1P1     WITH
+    T2P1               0.356      0.039      9.012      0.000
+
+ T1P2     WITH
+    T2P2               0.377      0.041      9.138      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.039      9.315      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.646      0.086     42.511      0.000
+    T1P2               3.070      0.074     41.401      0.000
+    T1P3               3.739      0.087     43.037      0.000
+    T2P1               3.597      0.085     42.555      0.000
+    T2P2               3.042      0.075     40.722      0.000
+    T2P3               3.757      0.088     42.490      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.387      0.025     15.466      0.000
+    T1P2               0.355      0.026     13.832      0.000
+    T1P3               0.392      0.025     15.532      0.000
+    T2P1               0.406      0.026     15.698      0.000
+    T2P2               0.363      0.026     14.116      0.000
+    T2P3               0.398      0.026     15.593      0.000
+
+Group H
+
+ T1       BY
+    T1P1               0.753      0.020     37.375      0.000
+    T1P2               0.759      0.020     38.595      0.000
+    T1P3               0.771      0.020     39.356      0.000
+
+ T2       BY
+    T2P1               0.747      0.020     37.400      0.000
+    T2P2               0.764      0.020     38.162      0.000
+    T2P3               0.762      0.020     38.672      0.000
+
+ T1       WITH
+    T2                 0.835      0.019     44.279      0.000
+
+ T1P1     WITH
+    T2P1               0.256      0.047      5.432      0.000
+
+ T1P2     WITH
+    T2P2               0.391      0.042      9.225      0.000
+
+ T1P3     WITH
+    T2P3               0.343      0.045      7.601      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.694      0.095     39.030      0.000
+    T1P2               3.054      0.082     37.230      0.000
+    T1P3               3.823      0.099     38.701      0.000
+    T2P1               3.739      0.096     38.785      0.000
+    T2P2               3.108      0.083     37.471      0.000
+    T2P3               3.838      0.098     39.013      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.434      0.030     14.310      0.000
+    T1P2               0.424      0.030     14.218      0.000
+    T1P3               0.405      0.030     13.403      0.000
+    T2P1               0.441      0.030     14.779      0.000
+    T2P2               0.416      0.031     13.578      0.000
+    T2P3               0.420      0.030     13.976      0.000
+
+Group I
+
+ T1       BY
+    T1P1               0.737      0.021     34.493      0.000
+    T1P2               0.764      0.022     35.520      0.000
+    T1P3               0.761      0.021     36.204      0.000
+
+ T2       BY
+    T2P1               0.754      0.022     34.501      0.000
+    T2P2               0.728      0.022     33.614      0.000
+    T2P3               0.746      0.021     34.768      0.000
+
+ T1       WITH
+    T2                 0.898      0.016     56.529      0.000
+
+ T1P1     WITH
+    T2P1               0.402      0.042      9.511      0.000
+
+ T1P2     WITH
+    T2P2               0.445      0.041     10.901      0.000
+
+ T1P3     WITH
+    T2P3               0.328      0.047      6.960      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.428      0.093     36.889      0.000
+    T1P2               3.061      0.085     36.004      0.000
+    T1P3               3.725      0.100     37.412      0.000
+    T2P1               3.544      0.095     37.227      0.000
+    T2P2               3.001      0.083     36.134      0.000
+    T2P3               3.765      0.100     37.803      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.457      0.031     14.524      0.000
+    T1P2               0.416      0.033     12.637      0.000
+    T1P3               0.421      0.032     13.139      0.000
+    T2P1               0.432      0.033     13.118      0.000
+    T2P2               0.470      0.032     14.889      0.000
+    T2P3               0.444      0.032     13.890      0.000
+
+Group J
+
+ T1       BY
+    T1P1               0.716      0.025     28.738      0.000
+    T1P2               0.733      0.026     28.518      0.000
+    T1P3               0.700      0.026     27.229      0.000
+
+ T2       BY
+    T2P1               0.718      0.025     28.270      0.000
+    T2P2               0.760      0.024     31.531      0.000
+    T2P3               0.755      0.024     31.622      0.000
+
+ T1       WITH
+    T2                 0.878      0.021     41.997      0.000
+
+ T1P1     WITH
+    T2P1               0.308      0.049      6.300      0.000
+
+ T1P2     WITH
+    T2P2               0.417      0.048      8.657      0.000
+
+ T1P3     WITH
+    T2P3               0.237      0.054      4.389      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.755      0.111     33.858      0.000
+    T1P2               3.062      0.094     32.740      0.000
+    T1P3               3.652      0.106     34.581      0.000
+    T2P1               3.678      0.108     34.114      0.000
+    T2P2               3.108      0.096     32.339      0.000
+    T2P3               3.898      0.115     33.944      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.487      0.036     13.632      0.000
+    T1P2               0.463      0.038     12.311      0.000
+    T1P3               0.510      0.036     14.160      0.000
+    T2P1               0.484      0.036     13.282      0.000
+    T2P2               0.423      0.037     11.543      0.000
+    T2P3               0.430      0.036     11.928      0.000
+
+Group K
+
+ T1       BY
+    T1P1               0.709      0.029     24.061      0.000
+    T1P2               0.737      0.029     25.379      0.000
+    T1P3               0.725      0.030     23.812      0.000
+
+ T2       BY
+    T2P1               0.706      0.030     23.418      0.000
+    T2P2               0.723      0.031     23.306      0.000
+    T2P3               0.693      0.030     23.069      0.000
+
+ T1       WITH
+    T2                 0.886      0.025     35.129      0.000
+
+ T1P1     WITH
+    T2P1               0.145      0.064      2.278      0.023
+
+ T1P2     WITH
+    T2P2               0.382      0.057      6.661      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.055      6.662      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.500      0.118     29.682      0.000
+    T1P2               3.035      0.107     28.286      0.000
+    T1P3               3.834      0.128     29.929      0.000
+    T2P1               3.555      0.120     29.652      0.000
+    T2P2               3.152      0.110     28.584      0.000
+    T2P3               3.855      0.131     29.317      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.498      0.042     11.934      0.000
+    T1P2               0.456      0.043     10.651      0.000
+    T1P3               0.475      0.044     10.774      0.000
+    T2P1               0.501      0.043     11.779      0.000
+    T2P2               0.477      0.045     10.640      0.000
+    T2P3               0.520      0.042     12.516      0.000
+
+Group L
+
+ T1       BY
+    T1P1               0.694      0.039     18.027      0.000
+    T1P2               0.648      0.039     16.687      0.000
+    T1P3               0.675      0.039     17.273      0.000
+
+ T2       BY
+    T2P1               0.670      0.039     17.061      0.000
+    T2P2               0.650      0.039     16.544      0.000
+    T2P3               0.687      0.039     17.694      0.000
+
+ T1       WITH
+    T2                 0.843      0.036     23.401      0.000
+
+ T1P1     WITH
+    T2P1               0.190      0.074      2.572      0.010
+
+ T1P2     WITH
+    T2P2               0.445      0.054      8.200      0.000
+
+ T1P3     WITH
+    T2P3               0.380      0.061      6.225      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.652      0.135     27.044      0.000
+    T1P2               3.014      0.117     25.783      0.000
+    T1P3               3.764      0.139     27.124      0.000
+    T2P1               3.516      0.134     26.216      0.000
+    T2P2               3.045      0.119     25.492      0.000
+    T2P3               3.895      0.148     26.403      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.518      0.053      9.695      0.000
+    T1P2               0.580      0.050     11.503      0.000
+    T1P3               0.544      0.053     10.300      0.000
+    T2P1               0.551      0.053     10.448      0.000
+    T2P2               0.577      0.051     11.278      0.000
+    T2P3               0.528      0.053      9.916      0.000
+
+Group M
+
+ T1       BY
+    T1P1               0.685      0.047     14.702      0.000
+    T1P2               0.593      0.046     12.856      0.000
+    T1P3               0.761      0.047     16.276      0.000
+
+ T2       BY
+    T2P1               0.654      0.047     13.861      0.000
+    T2P2               0.557      0.051     10.932      0.000
+    T2P3               0.696      0.049     14.162      0.000
+
+ T1       WITH
+    T2                 0.782      0.051     15.208      0.000
+
+ T1P1     WITH
+    T2P1               0.351      0.076      4.631      0.000
+
+ T1P2     WITH
+    T2P2               0.353      0.065      5.449      0.000
+
+ T1P3     WITH
+    T2P3               0.231      0.101      2.280      0.023
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.377      0.146     23.156      0.000
+    T1P2               3.049      0.137     22.231      0.000
+    T1P3               3.720      0.163     22.770      0.000
+    T2P1               3.521      0.160     22.074      0.000
+    T2P2               3.240      0.145     22.333      0.000
+    T2P3               3.757      0.166     22.639      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.531      0.064      8.331      0.000
+    T1P2               0.648      0.055     11.839      0.000
+    T1P3               0.421      0.071      5.915      0.000
+    T2P1               0.572      0.062      9.266      0.000
+    T2P2               0.690      0.057     12.166      0.000
+    T2P3               0.516      0.068      7.535      0.000
+
+Group N
+
+ T1       BY
+    T1P1               0.535      0.062      8.673      0.000
+    T1P2               0.590      0.062      9.447      0.000
+    T1P3               0.811      0.063     12.783      0.000
+
+ T2       BY
+    T2P1               0.606      0.059     10.363      0.000
+    T2P2               0.644      0.063     10.217      0.000
+    T2P3               0.871      0.061     14.272      0.000
+
+ T1       WITH
+    T2                 0.814      0.064     12.732      0.000
+
+ T1P1     WITH
+    T2P1               0.335      0.092      3.658      0.000
+
+ T1P2     WITH
+    T2P2               0.345      0.090      3.854      0.000
+
+ T1P3     WITH
+    T2P3               0.179      0.224      0.798      0.425
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.409      0.186     18.362      0.000
+    T1P2               3.158      0.178     17.714      0.000
+    T1P3               3.644      0.202     18.005      0.000
+    T2P1               3.412      0.206     16.557      0.000
+    T2P2               3.121      0.189     16.486      0.000
+    T2P3               3.563      0.213     16.760      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.714      0.066     10.820      0.000
+    T1P2               0.652      0.074      8.859      0.000
+    T1P3               0.343      0.103      3.338      0.001
+    T2P1               0.632      0.071      8.911      0.000
+    T2P2               0.585      0.081      7.203      0.000
+    T2P3               0.242      0.106      2.275      0.023
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group A
+
+ T1       BY
+    T1P1               0.794      0.023     34.991      0.000
+    T1P2               0.701      0.022     31.572      0.000
+    T1P3               0.627      0.023     27.155      0.000
+
+ T2       BY
+    T2P1               0.841      0.021     40.908      0.000
+    T2P2               0.742      0.023     32.944      0.000
+    T2P3               0.647      0.024     27.362      0.000
+
+ T1       WITH
+    T2                 0.701      0.030     23.516      0.000
+
+ T1P1     WITH
+    T2P1               0.080      0.076      1.049      0.294
+
+ T1P2     WITH
+    T2P2               0.255      0.048      5.376      0.000
+
+ T1P3     WITH
+    T2P3               0.301      0.040      7.462      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.966      0.099     40.193      0.000
+    T1P2               3.167      0.082     38.481      0.000
+    T1P3               4.603      0.112     41.100      0.000
+    T2P1               3.913      0.104     37.554      0.000
+    T2P2               3.253      0.087     37.252      0.000
+    T2P3               4.533      0.115     39.560      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.370      0.036     10.260      0.000
+    T1P2               0.509      0.031     16.341      0.000
+    T1P3               0.607      0.029     20.931      0.000
+    T2P1               0.293      0.035      8.459      0.000
+    T2P2               0.450      0.033     13.486      0.000
+    T2P3               0.582      0.031     19.024      0.000
+
+Group B
+
+ T1       BY
+    T1P1               0.857      0.019     44.602      0.000
+    T1P2               0.755      0.021     35.927      0.000
+    T1P3               0.705      0.021     33.014      0.000
+
+ T2       BY
+    T2P1               0.848      0.019     44.408      0.000
+    T2P2               0.749      0.022     34.585      0.000
+    T2P3               0.703      0.023     31.188      0.000
+
+ T1       WITH
+    T2                 0.762      0.025     30.895      0.000
+
+ T1P1     WITH
+    T2P1               0.115      0.083      1.375      0.169
+
+ T1P2     WITH
+    T2P2               0.465      0.043     10.860      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.042      8.597      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.812      0.105     36.149      0.000
+    T1P2               3.038      0.087     34.933      0.000
+    T1P3               4.240      0.114     37.156      0.000
+    T2P1               3.768      0.106     35.446      0.000
+    T2P2               3.132      0.089     35.192      0.000
+    T2P3               4.313      0.115     37.560      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.265      0.033      8.058      0.000
+    T1P2               0.430      0.032     13.525      0.000
+    T1P3               0.503      0.030     16.719      0.000
+    T2P1               0.281      0.032      8.668      0.000
+    T2P2               0.440      0.032     13.569      0.000
+    T2P3               0.506      0.032     15.965      0.000
+
+Group C
+
+ T1       BY
+    T1P1               0.800      0.020     39.874      0.000
+    T1P2               0.790      0.020     38.571      0.000
+    T1P3               0.714      0.022     32.890      0.000
+
+ T2       BY
+    T2P1               0.808      0.020     41.224      0.000
+    T2P2               0.805      0.020     40.836      0.000
+    T2P3               0.748      0.021     35.721      0.000
+
+ T1       WITH
+    T2                 0.832      0.020     41.773      0.000
+
+ T1P1     WITH
+    T2P1               0.246      0.059      4.156      0.000
+
+ T1P2     WITH
+    T2P2               0.458      0.047      9.710      0.000
+
+ T1P3     WITH
+    T2P3               0.381      0.044      8.688      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.910      0.109     35.740      0.000
+    T1P2               3.090      0.090     34.296      0.000
+    T1P3               4.243      0.116     36.635      0.000
+    T2P1               3.589      0.103     34.716      0.000
+    T2P2               2.910      0.088     33.211      0.000
+    T2P3               4.144      0.117     35.311      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.361      0.032     11.242      0.000
+    T1P2               0.375      0.032     11.593      0.000
+    T1P3               0.491      0.031     15.844      0.000
+    T2P1               0.347      0.032     10.964      0.000
+    T2P2               0.353      0.032     11.116      0.000
+    T2P3               0.440      0.031     14.061      0.000
+
+Group D
+
+ T1       BY
+    T1P1               0.812      0.016     52.015      0.000
+    T1P2               0.816      0.016     52.378      0.000
+    T1P3               0.754      0.017     43.898      0.000
+
+ T2       BY
+    T2P1               0.842      0.014     58.225      0.000
+    T2P2               0.843      0.014     58.168      0.000
+    T2P3               0.773      0.016     47.395      0.000
+
+ T1       WITH
+    T2                 0.843      0.015     54.442      0.000
+
+ T1P1     WITH
+    T2P1               0.225      0.052      4.333      0.000
+
+ T1P2     WITH
+    T2P2               0.402      0.046      8.817      0.000
+
+ T1P3     WITH
+    T2P3               0.404      0.038     10.618      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.734      0.091     40.840      0.000
+    T1P2               2.941      0.076     38.787      0.000
+    T1P3               3.945      0.095     41.382      0.000
+    T2P1               3.614      0.091     39.835      0.000
+    T2P2               2.880      0.076     37.970      0.000
+    T2P3               3.869      0.096     40.202      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.340      0.025     13.392      0.000
+    T1P2               0.334      0.025     13.151      0.000
+    T1P3               0.432      0.026     16.689      0.000
+    T2P1               0.291      0.024     11.924      0.000
+    T2P2               0.289      0.024     11.828      0.000
+    T2P3               0.403      0.025     15.983      0.000
+
+Group E
+
+ T1       BY
+    T1P1               0.776      0.017     46.441      0.000
+    T1P2               0.765      0.017     46.196      0.000
+    T1P3               0.786      0.017     47.091      0.000
+
+ T2       BY
+    T2P1               0.796      0.016     50.453      0.000
+    T2P2               0.817      0.015     52.939      0.000
+    T2P3               0.813      0.015     53.952      0.000
+
+ T1       WITH
+    T2                 0.848      0.015     55.745      0.000
+
+ T1P1     WITH
+    T2P1               0.348      0.041      8.553      0.000
+
+ T1P2     WITH
+    T2P2               0.365      0.041      8.817      0.000
+
+ T1P3     WITH
+    T2P3               0.412      0.039     10.531      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.888      0.091     42.668      0.000
+    T1P2               3.020      0.074     40.745      0.000
+    T1P3               3.904      0.091     42.695      0.000
+    T2P1               3.760      0.090     41.621      0.000
+    T2P2               3.067      0.076     40.177      0.000
+    T2P3               3.898      0.094     41.454      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.397      0.026     15.306      0.000
+    T1P2               0.414      0.025     16.320      0.000
+    T1P3               0.382      0.026     14.553      0.000
+    T2P1               0.367      0.025     14.625      0.000
+    T2P2               0.333      0.025     13.209      0.000
+    T2P3               0.339      0.024     13.858      0.000
+
+Group F
+
+ T1       BY
+    T1P1               0.779      0.016     50.102      0.000
+    T1P2               0.799      0.015     51.940      0.000
+    T1P3               0.774      0.016     48.237      0.000
+
+ T2       BY
+    T2P1               0.792      0.016     50.597      0.000
+    T2P2               0.793      0.015     51.710      0.000
+    T2P3               0.799      0.015     52.627      0.000
+
+ T1       WITH
+    T2                 0.861      0.014     63.528      0.000
+
+ T1P1     WITH
+    T2P1               0.339      0.039      8.665      0.000
+
+ T1P2     WITH
+    T2P2               0.430      0.037     11.699      0.000
+
+ T1P3     WITH
+    T2P3               0.402      0.037     10.835      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.642      0.082     44.196      0.000
+    T1P2               3.031      0.071     42.525      0.000
+    T1P3               3.732      0.084     44.644      0.000
+    T2P1               3.706      0.085     43.745      0.000
+    T2P2               3.055      0.072     42.292      0.000
+    T2P3               3.922      0.090     43.615      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.393      0.024     16.204      0.000
+    T1P2               0.361      0.025     14.670      0.000
+    T1P3               0.401      0.025     16.161      0.000
+    T2P1               0.373      0.025     15.035      0.000
+    T2P2               0.371      0.024     15.260      0.000
+    T2P3               0.362      0.024     14.946      0.000
+
+Group G
+
+ T1       BY
+    T1P1               0.783      0.016     49.058      0.000
+    T1P2               0.803      0.016     50.343      0.000
+    T1P3               0.779      0.016     48.081      0.000
+
+ T2       BY
+    T2P1               0.771      0.017     45.922      0.000
+    T2P2               0.798      0.016     49.554      0.000
+    T2P3               0.776      0.016     47.100      0.000
+
+ T1       WITH
+    T2                 0.877      0.014     64.624      0.000
+
+ T1P1     WITH
+    T2P1               0.356      0.039      9.012      0.000
+
+ T1P2     WITH
+    T2P2               0.377      0.041      9.138      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.039      9.315      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.646      0.086     42.511      0.000
+    T1P2               3.070      0.074     41.401      0.000
+    T1P3               3.739      0.087     43.037      0.000
+    T2P1               3.597      0.085     42.555      0.000
+    T2P2               3.042      0.075     40.722      0.000
+    T2P3               3.757      0.088     42.490      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.387      0.025     15.466      0.000
+    T1P2               0.355      0.026     13.832      0.000
+    T1P3               0.392      0.025     15.532      0.000
+    T2P1               0.406      0.026     15.698      0.000
+    T2P2               0.363      0.026     14.116      0.000
+    T2P3               0.398      0.026     15.593      0.000
+
+Group H
+
+ T1       BY
+    T1P1               0.753      0.020     37.375      0.000
+    T1P2               0.759      0.020     38.595      0.000
+    T1P3               0.771      0.020     39.356      0.000
+
+ T2       BY
+    T2P1               0.747      0.020     37.400      0.000
+    T2P2               0.764      0.020     38.162      0.000
+    T2P3               0.762      0.020     38.672      0.000
+
+ T1       WITH
+    T2                 0.835      0.019     44.279      0.000
+
+ T1P1     WITH
+    T2P1               0.256      0.047      5.432      0.000
+
+ T1P2     WITH
+    T2P2               0.391      0.042      9.225      0.000
+
+ T1P3     WITH
+    T2P3               0.343      0.045      7.601      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.694      0.095     39.030      0.000
+    T1P2               3.054      0.082     37.230      0.000
+    T1P3               3.823      0.099     38.701      0.000
+    T2P1               3.739      0.096     38.785      0.000
+    T2P2               3.108      0.083     37.471      0.000
+    T2P3               3.838      0.098     39.013      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.434      0.030     14.310      0.000
+    T1P2               0.424      0.030     14.218      0.000
+    T1P3               0.405      0.030     13.403      0.000
+    T2P1               0.441      0.030     14.779      0.000
+    T2P2               0.416      0.031     13.578      0.000
+    T2P3               0.420      0.030     13.976      0.000
+
+Group I
+
+ T1       BY
+    T1P1               0.737      0.021     34.493      0.000
+    T1P2               0.764      0.022     35.520      0.000
+    T1P3               0.761      0.021     36.204      0.000
+
+ T2       BY
+    T2P1               0.754      0.022     34.501      0.000
+    T2P2               0.728      0.022     33.614      0.000
+    T2P3               0.746      0.021     34.768      0.000
+
+ T1       WITH
+    T2                 0.898      0.016     56.529      0.000
+
+ T1P1     WITH
+    T2P1               0.402      0.042      9.511      0.000
+
+ T1P2     WITH
+    T2P2               0.445      0.041     10.901      0.000
+
+ T1P3     WITH
+    T2P3               0.328      0.047      6.960      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.428      0.093     36.889      0.000
+    T1P2               3.061      0.085     36.004      0.000
+    T1P3               3.725      0.100     37.412      0.000
+    T2P1               3.544      0.095     37.227      0.000
+    T2P2               3.001      0.083     36.134      0.000
+    T2P3               3.765      0.100     37.803      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.457      0.031     14.524      0.000
+    T1P2               0.416      0.033     12.637      0.000
+    T1P3               0.421      0.032     13.139      0.000
+    T2P1               0.432      0.033     13.118      0.000
+    T2P2               0.470      0.032     14.889      0.000
+    T2P3               0.444      0.032     13.890      0.000
+
+Group J
+
+ T1       BY
+    T1P1               0.716      0.025     28.738      0.000
+    T1P2               0.733      0.026     28.518      0.000
+    T1P3               0.700      0.026     27.229      0.000
+
+ T2       BY
+    T2P1               0.718      0.025     28.270      0.000
+    T2P2               0.760      0.024     31.531      0.000
+    T2P3               0.755      0.024     31.622      0.000
+
+ T1       WITH
+    T2                 0.878      0.021     41.997      0.000
+
+ T1P1     WITH
+    T2P1               0.308      0.049      6.300      0.000
+
+ T1P2     WITH
+    T2P2               0.417      0.048      8.657      0.000
+
+ T1P3     WITH
+    T2P3               0.237      0.054      4.389      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.755      0.111     33.858      0.000
+    T1P2               3.062      0.094     32.740      0.000
+    T1P3               3.652      0.106     34.581      0.000
+    T2P1               3.678      0.108     34.114      0.000
+    T2P2               3.108      0.096     32.339      0.000
+    T2P3               3.898      0.115     33.944      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.487      0.036     13.632      0.000
+    T1P2               0.463      0.038     12.311      0.000
+    T1P3               0.510      0.036     14.160      0.000
+    T2P1               0.484      0.036     13.282      0.000
+    T2P2               0.423      0.037     11.543      0.000
+    T2P3               0.430      0.036     11.928      0.000
+
+Group K
+
+ T1       BY
+    T1P1               0.709      0.029     24.061      0.000
+    T1P2               0.737      0.029     25.379      0.000
+    T1P3               0.725      0.030     23.812      0.000
+
+ T2       BY
+    T2P1               0.706      0.030     23.418      0.000
+    T2P2               0.723      0.031     23.306      0.000
+    T2P3               0.693      0.030     23.069      0.000
+
+ T1       WITH
+    T2                 0.886      0.025     35.129      0.000
+
+ T1P1     WITH
+    T2P1               0.145      0.064      2.278      0.023
+
+ T1P2     WITH
+    T2P2               0.382      0.057      6.661      0.000
+
+ T1P3     WITH
+    T2P3               0.364      0.055      6.662      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.500      0.118     29.682      0.000
+    T1P2               3.035      0.107     28.286      0.000
+    T1P3               3.834      0.128     29.929      0.000
+    T2P1               3.555      0.120     29.652      0.000
+    T2P2               3.152      0.110     28.584      0.000
+    T2P3               3.855      0.131     29.317      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.498      0.042     11.934      0.000
+    T1P2               0.456      0.043     10.651      0.000
+    T1P3               0.475      0.044     10.774      0.000
+    T2P1               0.501      0.043     11.779      0.000
+    T2P2               0.477      0.045     10.640      0.000
+    T2P3               0.520      0.042     12.516      0.000
+
+Group L
+
+ T1       BY
+    T1P1               0.694      0.039     18.027      0.000
+    T1P2               0.648      0.039     16.687      0.000
+    T1P3               0.675      0.039     17.273      0.000
+
+ T2       BY
+    T2P1               0.670      0.039     17.061      0.000
+    T2P2               0.650      0.039     16.544      0.000
+    T2P3               0.687      0.039     17.694      0.000
+
+ T1       WITH
+    T2                 0.843      0.036     23.401      0.000
+
+ T1P1     WITH
+    T2P1               0.190      0.074      2.572      0.010
+
+ T1P2     WITH
+    T2P2               0.445      0.054      8.200      0.000
+
+ T1P3     WITH
+    T2P3               0.380      0.061      6.225      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.652      0.135     27.044      0.000
+    T1P2               3.014      0.117     25.783      0.000
+    T1P3               3.764      0.139     27.124      0.000
+    T2P1               3.516      0.134     26.216      0.000
+    T2P2               3.045      0.119     25.492      0.000
+    T2P3               3.895      0.148     26.403      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.518      0.053      9.695      0.000
+    T1P2               0.580      0.050     11.503      0.000
+    T1P3               0.544      0.053     10.300      0.000
+    T2P1               0.551      0.053     10.448      0.000
+    T2P2               0.577      0.051     11.278      0.000
+    T2P3               0.528      0.053      9.916      0.000
+
+Group M
+
+ T1       BY
+    T1P1               0.685      0.047     14.702      0.000
+    T1P2               0.593      0.046     12.856      0.000
+    T1P3               0.761      0.047     16.276      0.000
+
+ T2       BY
+    T2P1               0.654      0.047     13.861      0.000
+    T2P2               0.557      0.051     10.932      0.000
+    T2P3               0.696      0.049     14.162      0.000
+
+ T1       WITH
+    T2                 0.782      0.051     15.208      0.000
+
+ T1P1     WITH
+    T2P1               0.351      0.076      4.631      0.000
+
+ T1P2     WITH
+    T2P2               0.353      0.065      5.449      0.000
+
+ T1P3     WITH
+    T2P3               0.231      0.101      2.280      0.023
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.377      0.146     23.156      0.000
+    T1P2               3.049      0.137     22.231      0.000
+    T1P3               3.720      0.163     22.770      0.000
+    T2P1               3.521      0.160     22.074      0.000
+    T2P2               3.240      0.145     22.333      0.000
+    T2P3               3.757      0.166     22.639      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.531      0.064      8.331      0.000
+    T1P2               0.648      0.055     11.839      0.000
+    T1P3               0.421      0.071      5.915      0.000
+    T2P1               0.572      0.062      9.266      0.000
+    T2P2               0.690      0.057     12.166      0.000
+    T2P3               0.516      0.068      7.535      0.000
+
+Group N
+
+ T1       BY
+    T1P1               0.535      0.062      8.673      0.000
+    T1P2               0.590      0.062      9.447      0.000
+    T1P3               0.811      0.063     12.783      0.000
+
+ T2       BY
+    T2P1               0.606      0.059     10.363      0.000
+    T2P2               0.644      0.063     10.217      0.000
+    T2P3               0.871      0.061     14.272      0.000
+
+ T1       WITH
+    T2                 0.814      0.064     12.732      0.000
+
+ T1P1     WITH
+    T2P1               0.335      0.092      3.658      0.000
+
+ T1P2     WITH
+    T2P2               0.345      0.090      3.854      0.000
+
+ T1P3     WITH
+    T2P3               0.179      0.224      0.798      0.425
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               3.409      0.186     18.362      0.000
+    T1P2               3.158      0.178     17.714      0.000
+    T1P3               3.644      0.202     18.005      0.000
+    T2P1               3.412      0.206     16.557      0.000
+    T2P2               3.121      0.189     16.486      0.000
+    T2P3               3.563      0.213     16.760      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.714      0.066     10.820      0.000
+    T1P2               0.652      0.074      8.859      0.000
+    T1P3               0.343      0.103      3.338      0.001
+    T2P1               0.632      0.071      8.911      0.000
+    T2P2               0.585      0.081      7.203      0.000
+    T2P3               0.242      0.106      2.275      0.023
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group A
+
+ T1       BY
+    T1P1               0.981      0.040     24.771      0.000
+    T1P2               0.929      0.040     23.030      0.000
+    T1P3               0.681      0.032     21.083      0.000
+
+ T2       BY
+    T2P1               1.008      0.039     26.174      0.000
+    T2P2               0.955      0.042     22.704      0.000
+    T2P3               0.699      0.034     20.601      0.000
+
+ T1       WITH
+    T2                 0.701      0.030     23.516      0.000
+
+ T1P1     WITH
+    T2P1               0.039      0.039      0.995      0.320
+
+ T1P2     WITH
+    T2P2               0.208      0.044      4.691      0.000
+
+ T1P3     WITH
+    T2P3               0.210      0.032      6.508      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.903      0.042    116.477      0.000
+    T1P2               4.197      0.046     92.083      0.000
+    T1P3               4.994      0.037    134.819      0.000
+    T2P1               4.692      0.042    110.538      0.000
+    T2P2               4.188      0.046     91.334      0.000
+    T2P3               4.901      0.038    127.603      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.565      0.056     10.080      0.000
+    T1P2               0.893      0.061     14.548      0.000
+    T1P3               0.714      0.042     16.923      0.000
+    T2P1               0.421      0.050      8.366      0.000
+    T2P2               0.746      0.057     13.031      0.000
+    T2P3               0.680      0.042     16.132      0.000
+
+Group B
+
+ T1       BY
+    T1P1               1.063      0.040     26.399      0.000
+    T1P2               1.017      0.044     23.044      0.000
+    T1P3               0.802      0.036     22.298      0.000
+
+ T2       BY
+    T2P1               1.033      0.039     26.424      0.000
+    T2P2               0.988      0.044     22.680      0.000
+    T2P3               0.780      0.036     21.835      0.000
+
+ T1       WITH
+    T2                 0.762      0.025     30.895      0.000
+
+ T1P1     WITH
+    T2P1               0.047      0.037      1.266      0.205
+
+ T1P2     WITH
+    T2P2               0.359      0.047      7.686      0.000
+
+ T1P3     WITH
+    T2P3               0.232      0.033      6.943      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.730      0.046    102.382      0.000
+    T1P2               4.092      0.050     81.459      0.000
+    T1P3               4.826      0.042    114.021      0.000
+    T2P1               4.591      0.046     99.978      0.000
+    T2P2               4.135      0.050     83.044      0.000
+    T2P3               4.783      0.042    114.492      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.409      0.050      8.133      0.000
+    T1P2               0.779      0.059     13.146      0.000
+    T1P3               0.652      0.043     15.092      0.000
+    T2P1               0.417      0.049      8.521      0.000
+    T2P2               0.767      0.059     13.064      0.000
+    T2P3               0.622      0.043     14.483      0.000
+
+Group C
+
+ T1       BY
+    T1P1               0.946      0.039     24.478      0.000
+    T1P2               1.058      0.045     23.700      0.000
+    T1P3               0.808      0.036     22.264      0.000
+
+ T2       BY
+    T2P1               1.009      0.041     24.424      0.000
+    T2P2               1.129      0.047     23.855      0.000
+    T2P3               0.862      0.038     22.523      0.000
+
+ T1       WITH
+    T2                 0.832      0.020     41.773      0.000
+
+ T1P1     WITH
+    T2P1               0.129      0.037      3.508      0.000
+
+ T1P2     WITH
+    T2P2               0.313      0.047      6.615      0.000
+
+ T1P3     WITH
+    T2P3               0.231      0.034      6.807      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.625      0.045    102.019      0.000
+    T1P2               4.137      0.051     80.731      0.000
+    T1P3               4.801      0.043    110.753      0.000
+    T2P1               4.484      0.048     92.513      0.000
+    T2P2               4.083      0.054     75.296      0.000
+    T2P3               4.775      0.045    107.043      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.504      0.046     11.041      0.000
+    T1P2               0.673      0.058     11.538      0.000
+    T1P3               0.628      0.044     14.325      0.000
+    T2P1               0.542      0.050     10.944      0.000
+    T2P2               0.694      0.062     11.266      0.000
+    T2P3               0.585      0.043     13.495      0.000
+
+Group D
+
+ T1       BY
+    T1P1               0.991      0.033     29.599      0.000
+    T1P2               1.142      0.039     29.215      0.000
+    T1P3               0.895      0.033     27.149      0.000
+
+ T2       BY
+    T2P1               1.038      0.034     30.213      0.000
+    T2P2               1.197      0.040     29.784      0.000
+    T2P3               0.938      0.034     27.411      0.000
+
+ T1       WITH
+    T2                 0.843      0.015     54.442      0.000
+
+ T1P1     WITH
+    T2P1               0.107      0.029      3.734      0.000
+
+ T1P2     WITH
+    T2P2               0.248      0.038      6.455      0.000
+
+ T1P3     WITH
+    T2P3               0.243      0.030      8.123      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.552      0.041    110.681      0.000
+    T1P2               4.118      0.047     87.217      0.000
+    T1P3               4.684      0.040    117.126      0.000
+    T2P1               4.455      0.042    106.524      0.000
+    T2P2               4.090      0.048     84.996      0.000
+    T2P3               4.695      0.041    114.029      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.505      0.038     13.220      0.000
+    T1P2               0.655      0.050     13.169      0.000
+    T1P3               0.609      0.038     15.936      0.000
+    T2P1               0.442      0.036     12.207      0.000
+    T2P2               0.583      0.048     12.217      0.000
+    T2P3               0.593      0.038     15.714      0.000
+
+Group E
+
+ T1       BY
+    T1P1               0.905      0.032     28.691      0.000
+    T1P2               1.045      0.036     28.786      0.000
+    T1P3               0.954      0.033     28.730      0.000
+
+ T2       BY
+    T2P1               0.939      0.033     28.853      0.000
+    T2P2               1.084      0.037     29.311      0.000
+    T2P3               0.991      0.033     29.587      0.000
+
+ T1       WITH
+    T2                 0.848      0.015     55.745      0.000
+
+ T1P1     WITH
+    T2P1               0.183      0.027      6.672      0.000
+
+ T1P2     WITH
+    T2P2               0.245      0.036      6.783      0.000
+
+ T1P3     WITH
+    T2P3               0.220      0.029      7.598      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.532      0.038    119.875      0.000
+    T1P2               4.122      0.044     92.887      0.000
+    T1P3               4.740      0.039    120.656      0.000
+    T2P1               4.439      0.038    115.412      0.000
+    T2P2               4.072      0.043     93.968      0.000
+    T2P3               4.751      0.040    119.996      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.540      0.036     14.839      0.000
+    T1P2               0.771      0.050     15.309      0.000
+    T1P3               0.563      0.039     14.387      0.000
+    T2P1               0.512      0.035     14.762      0.000
+    T2P2               0.587      0.043     13.610      0.000
+    T2P3               0.504      0.036     14.076      0.000
+
+Group F
+
+ T1       BY
+    T1P1               0.937      0.031     30.273      0.000
+    T1P2               1.083      0.036     30.400      0.000
+    T1P3               0.965      0.033     29.644      0.000
+
+ T2       BY
+    T2P1               0.930      0.031     29.897      0.000
+    T2P2               1.074      0.036     30.189      0.000
+    T2P3               0.958      0.032     30.302      0.000
+
+ T1       WITH
+    T2                 0.861      0.014     63.528      0.000
+
+ T1P1     WITH
+    T2P1               0.183      0.027      6.755      0.000
+
+ T1P2     WITH
+    T2P2               0.289      0.035      8.209      0.000
+
+ T1P3     WITH
+    T2P3               0.229      0.029      7.900      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.380      0.037    118.289      0.000
+    T1P2               4.105      0.042     98.420      0.000
+    T1P3               4.655      0.038    121.244      0.000
+    T2P1               4.350      0.036    119.273      0.000
+    T2P2               4.137      0.042     98.410      0.000
+    T2P3               4.703      0.037    126.506      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.568      0.036     15.775      0.000
+    T1P2               0.662      0.045     14.744      0.000
+    T1P3               0.624      0.039     15.933      0.000
+    T2P1               0.514      0.034     15.120      0.000
+    T2P2               0.681      0.045     15.223      0.000
+    T2P3               0.521      0.035     14.959      0.000
+
+Group G
+
+ T1       BY
+    T1P1               0.939      0.032     29.082      0.000
+    T1P2               1.095      0.037     29.393      0.000
+    T1P3               0.977      0.034     28.974      0.000
+
+ T2       BY
+    T2P1               0.928      0.033     28.454      0.000
+    T2P2               1.083      0.037     29.162      0.000
+    T2P3               0.966      0.034     28.620      0.000
+
+ T1       WITH
+    T2                 0.877      0.014     64.624      0.000
+
+ T1P1     WITH
+    T2P1               0.203      0.029      6.972      0.000
+
+ T1P2     WITH
+    T2P2               0.250      0.037      6.728      0.000
+
+ T1P3     WITH
+    T2P3               0.224      0.031      7.137      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.370      0.038    114.478      0.000
+    T1P2               4.184      0.043     96.332      0.000
+    T1P3               4.684      0.040    117.531      0.000
+    T2P1               4.333      0.039    112.013      0.000
+    T2P2               4.128      0.044     94.803      0.000
+    T2P3               4.679      0.040    117.101      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.555      0.036     15.312      0.000
+    T1P2               0.659      0.047     14.065      0.000
+    T1P3               0.616      0.040     15.378      0.000
+    T2P1               0.589      0.039     15.297      0.000
+    T2P2               0.668      0.047     14.096      0.000
+    T2P3               0.618      0.041     15.256      0.000
+
+Group H
+
+ T1       BY
+    T1P1               0.869      0.035     24.732      0.000
+    T1P2               1.013      0.041     24.792      0.000
+    T1P3               0.939      0.037     25.141      0.000
+
+ T2       BY
+    T2P1               0.859      0.035     24.619      0.000
+    T2P2               1.001      0.041     24.597      0.000
+    T2P3               0.928      0.037     25.006      0.000
+
+ T1       WITH
+    T2                 0.835      0.019     44.279      0.000
+
+ T1P1     WITH
+    T2P1               0.149      0.032      4.628      0.000
+
+ T1P2     WITH
+    T2P2               0.288      0.042      6.856      0.000
+
+ T1P3     WITH
+    T2P3               0.209      0.035      5.934      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.266      0.041    105.011      0.000
+    T1P2               4.078      0.047     86.745      0.000
+    T1P3               4.653      0.043    108.869      0.000
+    T2P1               4.297      0.040    106.326      0.000
+    T2P2               4.072      0.046     88.538      0.000
+    T2P3               4.673      0.043    109.541      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.578      0.042     13.754      0.000
+    T1P2               0.757      0.055     13.758      0.000
+    T1P3               0.600      0.046     13.120      0.000
+    T2P1               0.583      0.042     14.036      0.000
+    T2P2               0.714      0.053     13.346      0.000
+    T2P3               0.622      0.046     13.533      0.000
+
+Group I
+
+ T1       BY
+    T1P1               0.934      0.041     22.999      0.000
+    T1P2               1.032      0.045     23.088      0.000
+    T1P3               0.962      0.041     23.739      0.000
+
+ T2       BY
+    T2P1               0.906      0.039     22.985      0.000
+    T2P2               1.002      0.044     22.854      0.000
+    T2P3               0.934      0.040     23.509      0.000
+
+ T1       WITH
+    T2                 0.898      0.016     56.529      0.000
+
+ T1P1     WITH
+    T2P1               0.272      0.040      6.787      0.000
+
+ T1P2     WITH
+    T2P2               0.365      0.049      7.401      0.000
+
+ T1P3     WITH
+    T2P3               0.224      0.041      5.430      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.344      0.046     94.180      0.000
+    T1P2               4.134      0.049     83.900      0.000
+    T1P3               4.708      0.046    102.330      0.000
+    T2P1               4.261      0.044     97.535      0.000
+    T2P2               4.129      0.050     82.450      0.000
+    T2P3               4.715      0.045    103.784      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.734      0.053     13.847      0.000
+    T1P2               0.758      0.060     12.643      0.000
+    T1P3               0.672      0.053     12.782      0.000
+    T2P1               0.624      0.048     12.908      0.000
+    T2P2               0.889      0.064     13.946      0.000
+    T2P3               0.697      0.053     13.202      0.000
+
+Group J
+
+ T1       BY
+    T1P1               0.812      0.040     20.177      0.000
+    T1P2               0.971      0.049     19.962      0.000
+    T1P3               0.895      0.045     20.005      0.000
+
+ T2       BY
+    T2P1               0.822      0.042     19.802      0.000
+    T2P2               0.983      0.048     20.696      0.000
+    T2P3               0.906      0.043     21.117      0.000
+
+ T1       WITH
+    T2                 0.878      0.021     41.997      0.000
+
+ T1P1     WITH
+    T2P1               0.194      0.038      5.077      0.000
+
+ T1P2     WITH
+    T2P2               0.316      0.052      6.093      0.000
+
+ T1P3     WITH
+    T2P3               0.170      0.045      3.769      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.257      0.045     93.574      0.000
+    T1P2               4.059      0.053     76.141      0.000
+    T1P3               4.668      0.051     91.160      0.000
+    T2P1               4.214      0.046     91.557      0.000
+    T2P2               4.023      0.052     77.236      0.000
+    T2P3               4.680      0.048     97.028      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.626      0.050     12.562      0.000
+    T1P2               0.814      0.069     11.794      0.000
+    T1P3               0.833      0.065     12.725      0.000
+    T2P1               0.636      0.050     12.673      0.000
+    T2P2               0.708      0.062     11.406      0.000
+    T2P3               0.620      0.054     11.555      0.000
+
+Group K
+
+ T1       BY
+    T1P1               0.861      0.050     17.335      0.000
+    T1P2               0.976      0.056     17.437      0.000
+    T1P3               0.888      0.053     16.882      0.000
+
+ T2       BY
+    T2P1               0.826      0.048     17.239      0.000
+    T2P2               0.936      0.056     16.775      0.000
+    T2P3               0.852      0.051     16.657      0.000
+
+ T1       WITH
+    T2                 0.886      0.025     35.129      0.000
+
+ T1P1     WITH
+    T2P1               0.103      0.049      2.097      0.036
+
+ T1P2     WITH
+    T2P2               0.306      0.062      4.911      0.000
+
+ T1P3     WITH
+    T2P3               0.273      0.054      5.068      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.256      0.056     76.442      0.000
+    T1P2               4.015      0.061     66.129      0.000
+    T1P3               4.698      0.056     84.091      0.000
+    T2P1               4.161      0.054     76.784      0.000
+    T2P2               4.079      0.060     67.935      0.000
+    T2P3               4.741      0.056     83.963      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.736      0.067     10.960      0.000
+    T1P2               0.799      0.078     10.277      0.000
+    T1P3               0.714      0.068     10.464      0.000
+    T2P1               0.687      0.064     10.671      0.000
+    T2P2               0.800      0.079     10.141      0.000
+    T2P3               0.787      0.070     11.274      0.000
+
+Group L
+
+ T1       BY
+    T1P1               0.798      0.057     14.093      0.000
+    T1P2               0.878      0.067     13.103      0.000
+    T1P3               0.858      0.063     13.552      0.000
+
+ T2       BY
+    T2P1               0.784      0.058     13.459      0.000
+    T2P2               0.863      0.066     12.993      0.000
+    T2P3               0.843      0.062     13.585      0.000
+
+ T1       WITH
+    T2                 0.843      0.036     23.401      0.000
+
+ T1P1     WITH
+    T2P1               0.136      0.060      2.267      0.023
+
+ T1P2     WITH
+    T2P2               0.462      0.080      5.741      0.000
+
+ T1P3     WITH
+    T2P3               0.318      0.070      4.573      0.000
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.197      0.058     72.759      0.000
+    T1P2               4.083      0.068     59.725      0.000
+    T1P3               4.784      0.064     74.925      0.000
+    T2P1               4.110      0.060     68.591      0.000
+    T2P2               4.040      0.068     59.516      0.000
+    T2P3               4.785      0.062     76.728      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.684      0.077      8.939      0.000
+    T1P2               1.063      0.104     10.239      0.000
+    T1P3               0.879      0.093      9.478      0.000
+    T2P1               0.752      0.080      9.374      0.000
+    T2P2               1.015      0.101     10.012      0.000
+    T2P3               0.797      0.087      9.197      0.000
+
+Group M
+
+ T1       BY
+    T1P1               0.834      0.073     11.443      0.000
+    T1P2               0.768      0.074     10.442      0.000
+    T1P3               0.957      0.078     12.290      0.000
+
+ T2       BY
+    T2P1               0.752      0.066     11.384      0.000
+    T2P2               0.693      0.073      9.501      0.000
+    T2P3               0.863      0.074     11.664      0.000
+
+ T1       WITH
+    T2                 0.782      0.051     15.208      0.000
+
+ T1P1     WITH
+    T2P1               0.271      0.075      3.603      0.000
+
+ T1P2     WITH
+    T2P2               0.381      0.087      4.367      0.000
+
+ T1P3     WITH
+    T2P3               0.168      0.088      1.900      0.057
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.114      0.070     58.783      0.000
+    T1P2               3.948      0.075     52.459      0.000
+    T1P3               4.679      0.073     64.300      0.000
+    T2P1               4.049      0.068     59.197      0.000
+    T2P2               4.031      0.075     53.482      0.000
+    T2P3               4.658      0.074     62.668      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               0.788      0.099      8.002      0.000
+    T1P2               1.087      0.112      9.702      0.000
+    T1P3               0.666      0.113      5.885      0.000
+    T2P1               0.756      0.097      7.795      0.000
+    T2P2               1.068      0.115      9.316      0.000
+    T2P3               0.793      0.117      6.771      0.000
+
+Group N
+
+ T1       BY
+    T1P1               0.643      0.084      7.624      0.000
+    T1P2               0.755      0.094      8.008      0.000
+    T1P3               1.068      0.104     10.267      0.000
+
+ T2       BY
+    T2P1               0.680      0.084      8.106      0.000
+    T2P2               0.799      0.101      7.893      0.000
+    T2P3               1.130      0.109     10.399      0.000
+
+ T1       WITH
+    T2                 0.814      0.064     12.732      0.000
+
+ T1P1     WITH
+    T2P1               0.304      0.099      3.053      0.002
+
+ T1P2     WITH
+    T2P2               0.338      0.111      3.043      0.002
+
+ T1P3     WITH
+    T2P3               0.088      0.132      0.665      0.506
+
+ Means
+    T1                 0.000      0.000    999.000    999.000
+    T2                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    T1P1               4.095      0.089     45.916      0.000
+    T1P2               4.042      0.095     42.383      0.000
+    T1P3               4.800      0.097     49.451      0.000
+    T2P1               3.827      0.087     44.008      0.000
+    T2P2               3.871      0.097     40.062      0.000
+    T2P3               4.623      0.100     46.402      0.000
+
+ Variances
+    T1                 1.000      0.000    999.000    999.000
+    T2                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    T1P1               1.030      0.131      7.871      0.000
+    T1P2               1.068      0.149      7.158      0.000
+    T1P3               0.595      0.184      3.241      0.001
+    T2P1               0.796      0.109      7.311      0.000
+    T2P2               0.900      0.133      6.751      0.000
+    T2P3               0.407      0.177      2.295      0.022
+
+
+R-SQUARE
+
+Group A
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.630      0.036     17.496      0.000
+    T1P2               0.491      0.031     15.786      0.000
+    T1P3               0.393      0.029     13.577      0.000
+    T2P1               0.707      0.035     20.454      0.000
+    T2P2               0.550      0.033     16.472      0.000
+    T2P3               0.418      0.031     13.681      0.000
+
+Group B
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.735      0.033     22.301      0.000
+    T1P2               0.570      0.032     17.963      0.000
+    T1P3               0.497      0.030     16.507      0.000
+    T2P1               0.719      0.032     22.204      0.000
+    T2P2               0.560      0.032     17.293      0.000
+    T2P3               0.494      0.032     15.594      0.000
+
+Group C
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.639      0.032     19.937      0.000
+    T1P2               0.625      0.032     19.285      0.000
+    T1P3               0.509      0.031     16.445      0.000
+    T2P1               0.653      0.032     20.612      0.000
+    T2P2               0.647      0.032     20.418      0.000
+    T2P3               0.560      0.031     17.860      0.000
+
+Group D
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.660      0.025     26.007      0.000
+    T1P2               0.666      0.025     26.189      0.000
+    T1P3               0.568      0.026     21.949      0.000
+    T2P1               0.709      0.024     29.113      0.000
+    T2P2               0.711      0.024     29.084      0.000
+    T2P3               0.597      0.025     23.698      0.000
+
+Group E
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.603      0.026     23.221      0.000
+    T1P2               0.586      0.025     23.098      0.000
+    T1P3               0.618      0.026     23.545      0.000
+    T2P1               0.633      0.025     25.227      0.000
+    T2P2               0.667      0.025     26.470      0.000
+    T2P3               0.661      0.024     26.976      0.000
+
+Group F
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.607      0.024     25.051      0.000
+    T1P2               0.639      0.025     25.970      0.000
+    T1P3               0.599      0.025     24.118      0.000
+    T2P1               0.627      0.025     25.299      0.000
+    T2P2               0.629      0.024     25.855      0.000
+    T2P3               0.638      0.024     26.314      0.000
+
+Group G
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.613      0.025     24.529      0.000
+    T1P2               0.645      0.026     25.171      0.000
+    T1P3               0.608      0.025     24.041      0.000
+    T2P1               0.594      0.026     22.961      0.000
+    T2P2               0.637      0.026     24.777      0.000
+    T2P3               0.602      0.026     23.550      0.000
+
+Group H
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.566      0.030     18.688      0.000
+    T1P2               0.576      0.030     19.298      0.000
+    T1P3               0.595      0.030     19.678      0.000
+    T2P1               0.559      0.030     18.700      0.000
+    T2P2               0.584      0.031     19.081      0.000
+    T2P3               0.580      0.030     19.336      0.000
+
+Group I
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.543      0.031     17.247      0.000
+    T1P2               0.584      0.033     17.760      0.000
+    T1P3               0.579      0.032     18.102      0.000
+    T2P1               0.568      0.033     17.250      0.000
+    T2P2               0.530      0.032     16.807      0.000
+    T2P3               0.556      0.032     17.384      0.000
+
+Group J
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.513      0.036     14.369      0.000
+    T1P2               0.537      0.038     14.259      0.000
+    T1P3               0.490      0.036     13.614      0.000
+    T2P1               0.516      0.036     14.135      0.000
+    T2P2               0.577      0.037     15.765      0.000
+    T2P3               0.570      0.036     15.811      0.000
+
+Group K
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.502      0.042     12.031      0.000
+    T1P2               0.544      0.043     12.690      0.000
+    T1P3               0.525      0.044     11.906      0.000
+    T2P1               0.499      0.043     11.709      0.000
+    T2P2               0.523      0.045     11.653      0.000
+    T2P3               0.480      0.042     11.534      0.000
+
+Group L
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.482      0.053      9.013      0.000
+    T1P2               0.420      0.050      8.344      0.000
+    T1P3               0.456      0.053      8.636      0.000
+    T2P1               0.449      0.053      8.530      0.000
+    T2P2               0.423      0.051      8.272      0.000
+    T2P3               0.472      0.053      8.847      0.000
+
+Group M
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.469      0.064      7.351      0.000
+    T1P2               0.352      0.055      6.428      0.000
+    T1P3               0.579      0.071      8.138      0.000
+    T2P1               0.428      0.062      6.930      0.000
+    T2P2               0.310      0.057      5.466      0.000
+    T2P3               0.484      0.068      7.081      0.000
+
+Group N
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    T1P1               0.286      0.066      4.336      0.000
+    T1P2               0.348      0.074      4.723      0.000
+    T1P3               0.657      0.103      6.392      0.000
+    T2P1               0.368      0.071      5.181      0.000
+    T2P2               0.415      0.081      5.109      0.000
+    T2P3               0.758      0.106      7.136      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.746E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+     Beginning Time:  13:15:16
+        Ending Time:  13:15:28
+       Elapsed Time:  00:00:12
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2010 Muthen & Muthen

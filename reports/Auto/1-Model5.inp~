@@ -1,0 +1,226 @@
+TITLE:      GSOEP Multigroup Model No Constraints
+
+DATA:       FILE is T:\agr.csv;
+
+VARIABLE:   NAMES ARE id t1i1 t1i2 t1i3 t2i1 t2i2 t2i3 age;
+            USEVAR = t1i1-age;
+            missing is t1i1-age (-9);
+GROU = age (1=a 2=b 3=c 4=d 5=e 6=f 7=g 8=h 9=i 10=j 11=k 12=l 13=m 14=n 15=o 16=p 17=q);
+
+
+ANALYSIS:   ESTIMATOR = ml;
+            MODEL = nocovariances; 
+
+
+MODEL:      t1 by t1i1@1;
+            t1 by t1i2(l1);
+            t1 by t1i3(l2);
+            t2 by t2i1@1;
+            t2 by t2i2(l1);
+            t2 by t2i3(l2);
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1@0 t2];
+            [t1i1 t2i1](i1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+           
+
+MODEL a:    
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1@0 t2];
+            [t1i1 t2i1](ia1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+MODEL b:    
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ib1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+MODEL c:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ic1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+
+MODEL d:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](id1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+MODEL e:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ie1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL f:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](if1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL g:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ig1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL h:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ih1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL i:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ii1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL j:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ij1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL k:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ik1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+MODEL l:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](il1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL m:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](im1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL n:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](in1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL o:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](io1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+MODEL p:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](ip1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+MODEL q:    
+
+
+            t1 with t2;
+            t1i1 with t2i1;
+            t1i2 with t2i2;
+            !t1i3 with t2i3;
+            [t1 t2];
+            [t1i1 t2i1](iq1);
+            [t1i2 t2i2](i2);
+            [t1i3 t2i3](i3);
+
+OUTPUT: sampstat; stand;
+
+

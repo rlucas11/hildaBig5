@@ -1,0 +1,203 @@
+TITLE:      HILDA Extraversion Multigroup Model Model 1 (Configural Invariance);
+DATA:       FILE is /home/rich/Documents/Datasets/HILDA09/Cleaned/eParcels.dat;
+VARIABLE:   NAMES ARE id hid weight age t1p1 t1p2 t1p3
+	    t2p1 t2p2 t2p3;
+            USEVAR = t1p1-t2p3;
+	    MISSING = .;
+	    GROUP = age (1=a 2=b 3=c 4=d 5=e 6=f 7=g 
+	    8=h 9=i 10=j 11=k 12=l 13=m 14=n);
+ANALYSIS:   ESTIMATOR = ml;
+            MODEL = nocovariances; 
+MODEL:      
+	    t1 by *t1p1(l1);
+            t1 by t1p2(l2);
+            t1 by t1p3(l3);
+            t2 by *t2p1(l1);
+            t2 by t2p2(l2);
+            t2 by t2p3(l3);
+	    t1@1; t2;
+            t1 with t2;
+            t1p1 with t2p1;
+            t1p2 with t2p2;
+            t1p3 with t2p3;
+MODEL a:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL b:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+MODEL c:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL d:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+           
+MODEL e:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+MODEL f:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL g:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL h:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL i:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+           
+MODEL j:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL k:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL l:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+MODEL m:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+           
+MODEL n:    
+	    t1 by *t1p1;
+            t1 by t1p2;
+            t1 by t1p3;
+            t2 by *t2p1;
+            t2 by t2p2;
+            t2 by t2p3;
+	    t1@1; t2@1;
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
+            
+OUTPUT: sampstat; stand;

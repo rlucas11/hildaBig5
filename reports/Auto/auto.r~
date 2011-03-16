@@ -1,0 +1,130 @@
+library(MplusAutomation)
+
+createModels("template5.inp")
+runModels("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",Mplus_command="wine Mplus.exe")
+summaryStats5 <- extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5")
+showSummaryTable(summaryStats5)
+
+createModels("template4.inp")
+runModels("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model4",Mplus_command="wine Mplus.exe")
+summaryStats4 <- extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model4")
+showSummaryTable(summaryStats4)
+
+createModels("template3.inp")
+runModels("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model3",Mplus_command="wine Mplus.exe")
+summaryStats3 <- extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model3")
+showSummaryTable(summaryStats3)
+
+createModels("template2.inp")
+runModels("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model2",Mplus_command="wine Mplus.exe")
+summaryStats2 <- extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model2")
+showSummaryTable(summaryStats2)
+
+createModels("template1.inp")
+runModels("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model1",Mplus_command="wine Mplus.exe")
+summaryStats1 <- extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model1")
+showSummaryTable(summaryStats1)
+
+extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto",recursive=TRUE,filefilter=".*extraversion*")
+extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto",recursive=TRUE,filefilter=".*agreeableness*")
+extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto",recursive=TRUE,filefilter=".*conscientiousness*")
+extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto",recursive=TRUE,filefilter=".*neuroticism*")
+extractModelSummaries("/home/rich/Dropbox/HILDA09/Mplus/Auto",recursive=TRUE,filefilter=".*openness*")
+
+###Means
+extParam <- extractModelParameters("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",filefilter=".*extraversion*")
+extMeans <- extParam$unstandardized[which(extParam$unstandardized$paramHeader=="Means"),]
+agrParam <- extractModelParameters("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",filefilter=".*agreeableness*")
+agrMeans <- agrParam$unstandardized[which(agrParam$unstandardized$paramHeader=="Means"),]
+conParam <- extractModelParameters("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",filefilter=".*conscientiousness*")
+conMeans <- conParam$unstandardized[which(conParam$unstandardized$paramHeader=="Means"),]
+neuParam <- extractModelParameters("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",filefilter=".*neuroticism*")
+neuMeans <- neuParam$unstandardized[which(neuParam$unstandardized$paramHeader=="Means"),]
+opeParam <- extractModelParameters("/home/rich/Dropbox/HILDA09/Mplus/Auto/Model5",filefilter=".*openness*")
+opeMeans <- opeParam$unstandardized[which(opeParam$unstandardized$paramHeader=="Means"),]
+
+cfaMeans <- cbind(extMeans[,c(3,7)],agrMeans[,3],conMeans[,3],neuMeans[,3],opeMeans[,3])
+names(cfaMeans) <- c("e","group","a","c","n","o")
+age <- c(17,21,22,26,27,31,32,36,37,41,42,46,47,51,52,56,57,61,62,66,67,71,72,76,77,81,82,86)
+cfaMeans <- cbind(cfaMeans,age)
+
+library(ggplot2)
+
+ePlot <- qplot(age,e,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Extraversion")+scale_y_continuous(limits=c(-1.5,1))
+aPlot <- qplot(age,a,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Agreeableness")+scale_y_continuous(limits=c(-1.5,1))
+cPlot <- qplot(age,c,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Conscientiousness")+scale_y_continuous(limits=c(-1.5,1))
+nPlot <- qplot(age,n,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Neuroticism")+scale_y_continuous(limits=c(-1.5,1))
+oPlot <- qplot(age,o,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Openness")+scale_y_continuous(limits=c(-1.5,1))
+
+png("~/Dropbox/HILDA09/cfaMeanFigure1.png",width=10,height=8,units="in",res=300)
+grid.newpage()
+pushViewport(viewport(layout=grid.layout(2,3)))
+print(ePlot,vp=viewport(layout.pos.row=1,layout.pos.col=1))
+print(aPlot,vp=viewport(layout.pos.row=1,layout.pos.col=2))
+print(cPlot,vp=viewport(layout.pos.row=1,layout.pos.col=3))
+print(nPlot,vp=viewport(layout.pos.row=2,layout.pos.col=1))
+print(oPlot,vp=viewport(layout.pos.row=2,layout.pos.col=2))
+dev.off()
+
+
+###Correlations
+extCorrs <- extParam$stdyx.standardized[which(extParam$stdyx.standardized$paramHeader=="T1.WITH"),]
+agrCorrs <- agrParam$stdyx.standardized[which(extParam$stdyx.standardized$paramHeader=="T1.WITH"),]
+conCorrs <- conParam$stdyx.standardized[which(extParam$stdyx.standardized$paramHeader=="T1.WITH"),]
+neuCorrs <- neuParam$stdyx.standardized[which(extParam$stdyx.standardized$paramHeader=="T1.WITH"),]
+opeCorrs <- opeParam$stdyx.standardized[which(extParam$stdyx.standardized$paramHeader=="T1.WITH"),]
+
+cfaCorrs <- cbind(extCorrs[,c(3,7)],agrCorrs[,3],conCorrs[,3],neuCorrs[,3],opeCorrs[,3])
+names(cfaCorrs) <- c("e","group","a","c","n","o")
+age <- seq(17,82,by=5)
+cfaCorrs <- cbind(cfaCorrs,age)
+
+ePlot <- qplot(age,e,data=cfaCorrs,xlab="Age",ylab="r")+
+  geom_smooth(data=cfaCorrs,method="lm",formula=y~poly(x,2),color="black",se=F)+
+  geom_smooth(data=cfaCorrs,color="grey",se=F)+
+  theme_bw(base_size=10)+
+  opts(title="Extraversion")+
+  scale_y_continuous(limits=c(.40,1.00))
+aPlot <- qplot(age,a,data=cfaCorrs,xlab="Age",ylab="r")+
+  geom_smooth(data=cfaCorrs,method="lm",formula=y~poly(x,2),color="black",se=F)+
+  geom_smooth(data=cfaCorrs,color="grey",se=F)+
+  theme_bw(base_size=10)+
+  opts(title="Agreeableness")+
+  scale_y_continuous(limits=c(.40,1.00))
+cPlot <- qplot(age,c,data=cfaCorrs,xlab="Age",ylab="r")+
+  geom_smooth(data=cfaCorrs,method="lm",formula=y~poly(x,2),color="black",se=F)+
+  geom_smooth(data=cfaCorrs,color="grey",se=F)+
+  theme_bw(base_size=10)+
+  opts(title="Conscientiousness")+
+  scale_y_continuous(limits=c(.40,1.00))
+nPlot <- qplot(age,n,data=cfaCorrs,xlab="Age",ylab="r")+
+  geom_smooth(data=cfaCorrs,method="lm",formula=y~poly(x,2),color="black",se=F)+
+  geom_smooth(data=cfaCorrs,color="grey",se=F)+
+  theme_bw(base_size=10)+
+  opts(title="Neuroticism")+
+  scale_y_continuous(limits=c(.40,1.00))
+oPlot <- qplot(age,o,data=cfaCorrs,xlab="Age",ylab="r")+
+  geom_smooth(data=cfaCorrs,method="lm",formula=y~poly(x,2),color="black",se=F)+
+  geom_smooth(data=cfaCorrs,color="grey",se=F)+
+  theme_bw(base_size=10)+
+  opts(title="Openness")+
+  scale_y_continuous(limits=c(.40,1.00))
+#aggPlot <- qplot(age,agg,data=s,xlab="Age",ylab="r")+
+#  geom_smooth(data=s,method="lm",formula=y~poly(x,2),color="black",se=F)+
+#  geom_smooth(data=s,color="grey",se=F)+
+#  theme_bw(base_size=10)+
+#  opts(title="Average")+
+#  scale_y_continuous(limits=c(.40,.90))
+
+
+
+png("~/Dropbox/HILDA09/cfaStabilityFigure2.png",width=10,height=8,units="in",res=300)
+grid.newpage()
+pushViewport(viewport(layout=grid.layout(2,3)))
+print(ePlot,vp=viewport(layout.pos.row=1,layout.pos.col=1))
+print(aPlot,vp=viewport(layout.pos.row=1,layout.pos.col=2))
+print(cPlot,vp=viewport(layout.pos.row=1,layout.pos.col=3))
+print(nPlot,vp=viewport(layout.pos.row=2,layout.pos.col=1))
+print(oPlot,vp=viewport(layout.pos.row=2,layout.pos.col=2))
+#print(aggPlot,vp=viewport(layout.pos.row=2,layout.pos.col=3))
+dev.off()

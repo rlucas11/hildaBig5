@@ -1,0 +1,121 @@
+TITLE:      HILDA Extraversion Multigroup Model Model 4 (Group Metric Invariance);
+DATA:       FILE is /home/rich/Dropbox/HILDA09/Mplus/Auto/eParcels.dat;
+VARIABLE:   NAMES ARE id hid weight age t1p1 t1p2 t1p3
+	    t2p1 t2p2 t2p3;
+            USEVAR = t1p1-t2p3;
+	    MISSING = .;
+	    GROUP = age (1=a 2=b 3=c 4=d 5=e 6=f 7=g 
+	    8=h 9=i 10=j 11=k 12=l 13=m 14=n);
+ANALYSIS:   ESTIMATOR = ml;
+            MODEL = nocovariances; 
+MODEL:      t1 by *t1p1(l1);
+            t1 by t1p2(l2);
+            t1 by t1p3(l3);
+            t2 by *t2p1(l1);
+            t2 by t2p2(l2);
+            t2 by t2p3(l3);
+            t1 with t2;
+            t1p1 with t2p1;
+            t1p2 with t2p2;
+            t1p3 with t2p3;
+            [t1p1 t2p1](i1);
+            [t1p2 t2p2](i2);
+            [t1p3 t2p3](i3);
+           
+MODEL a:    
+      	    t1-t2;
+      	    [t1@0];[t2];
+            [t1p1 t2p1](ai1);
+            [t1p2 t2p2](ai2);
+            [t1p3 t2p3](ai3);
+            
+MODEL b:    
+      	    t1-t2;
+            [t1@0];[t2];
+            [t1p1 t2p1](bi1);
+            [t1p2 t2p2](bi2);
+            [t1p3 t2p3](bi3);
+MODEL c:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ci1);
+            [t1p2 t2p2](ci2);
+            [t1p3 t2p3](ci3);
+            
+MODEL d:    
+      	    t1@1; t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](di1);
+            [t1p2 t2p2](di2);
+            [t1p3 t2p3](di3);
+           
+MODEL e:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ei1);
+            [t1p2 t2p2](ei2);
+            [t1p3 t2p3](ei3);
+MODEL f:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](fi1);
+            [t1p2 t2p2](fi2);
+            [t1p3 t2p3](fi3);
+            
+MODEL g:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](gi1);
+            [t1p2 t2p2](gi2);
+            [t1p3 t2p3](gi3);
+            
+MODEL h:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](hi1);
+            [t1p2 t2p2](hi2);
+            [t1p3 t2p3](hi3);
+            
+MODEL i:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ii1);
+            [t1p2 t2p2](ii2);
+            [t1p3 t2p3](ii3);
+           
+MODEL j:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ji1);
+            [t1p2 t2p2](ji2);
+            [t1p3 t2p3](ji3);
+            
+MODEL k:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ki1);
+            [t1p2 t2p2](ki2);
+            [t1p3 t2p3](ki3);
+            
+MODEL l:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](li1);
+            [t1p2 t2p2](li2);
+            [t1p3 t2p3](li3);
+            
+MODEL m:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](mi1);
+            [t1p2 t2p2](mi2);
+            [t1p3 t2p3](mi3);
+           
+MODEL n:    
+      	    t1-t2;
+      	    [t1@0];[t2]; 
+            [t1p1 t2p1](ni1);
+            [t1p2 t2p2](ni2);
+            [t1p3 t2p3](ni3);
+            
+OUTPUT: sampstat; stand;

@@ -1,0 +1,132 @@
+TITLE: HILDA ESEM Test
+
+DATA:       FILE is /home/rich/Dropbox/HILDA09/Mplus/hildaItems.csv;
+            !X for school; V for home
+
+VARIABLE:   NAMES ARE id age05 hid weight y05e1 y05e3 y05e4 y05e5 y05e6
+            y05e8 y05a1 y05a3 y05a4 y05a6 y05c1 y05c2 y05c3 y05c4 
+            y05c5 y05c6 y05n1 y05n2 y05n3 y05n4 y05n5 y05n6 y05o1 
+            y05o2 y05o3 y05o4 y05o5 y05o6 age09 y09e1 y09e3 y09e4
+            y09e5 y09e6 y09e8 y09a1 y09a3 y09a4 y09a6 y09c1 y09c2 
+            y09c3 y09c4 y09c5 y09c6 y09n1 y09n2 y09n3 y09n4 y09n5
+            y09n6 y09o1 y09o2 y09o3 y09o4 y09o5 y09o6 female agecat
+            agecat2 agecat5 agecat5b agecat5r;
+            USEVAR = y05e1-y05o6,y09e1-y09o6;
+            missing is y05e1-y09o6 (-9);
+            !USEOBSERVATIONS is (age EQ 15);
+            GROUP = agecat5r (21=a 22=b 23=c 4=d 5=e 6=f 7=g 8=h 9=i 10=j
+            11=k 12=l 13=m 14=n);
+            !GROUP = agecat (1=a 2=b);
+            !WEIGHT is weight;
+            !CLUSTER is hid;
+
+ANALYSIS:   !TYPE = complex;
+            !ESTIMATOR = mlr;
+            !MODEL = nocovariances;
+            process=3;
+
+MODEL:      t1f1-t1f5 by y05e1-y05o6(*t1 1) ;
+            t2f1-t2f5 by y09e1-y09o6(*t2 1) ;
+            [y05e1-y05o6](11-38);
+            [y09e1-y09o6](11-38);
+            y05e1-y05o6 pwith y09e1-y09o6;
+            t2f1-t2f5 with t1f1-t1f5;
+            !Based on Modification Indices:
+            y05e6 with y05e3;
+            y09e6 with y09e3;
+            y05c2 with y05c1;
+            y09c2 with y09c1;
+            y05c6 with y05c3;
+            y09c6 with y09c3;
+            y05n4 with y05n1;
+            y09n4 with y09n1;
+            y05n5 with y05n2;
+            y09n5 with y09n2;
+            y05o6 with y05o3;
+            y09o6 with y09o3;
+
+MODEL a:    
+      	    t1f1-t2f5;
+      	    [t1f1-t1f5];
+      	    [t2f1-t2f5];
+
+MODEL b:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL c:   
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL d:    
+      	    !t1f1-t1f52f5;
+            ![t1f1-t1f5@0];
+            ![t2f1-t2f5];
+
+MODEL e:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL f:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL g:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL h:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL i:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL j:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL k:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL l:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL m:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+MODEL n:    
+       
+      	    t1f1-t2f5;
+            [t1f1-t1f5];
+            [t2f1-t2f5];
+
+
+OUTPUT:     stand; tech4;
+
