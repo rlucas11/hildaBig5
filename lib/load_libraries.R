@@ -1,7 +1,7 @@
 #library('testthat')
 #library('yaml')
 library('foreign')
-library('OpenMx')
+#library('OpenMx')
 library('MplusAutomation')
 
 #library('reshape')

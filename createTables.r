@@ -4,7 +4,18 @@
 
 h <- read.csv("~/Documents/Datasets/HILDA09/Cleaned/hildaItems.csv",na="-9",header=F)
 
-table1 <- table(h$V66,h$V62)
+temp05 <- sapply(h[,5:32],is.na)
+y05Miss <- rowMeans(temp05)
+temp09 <- sapply(h[,34:61],is.na)
+y09Miss <- rowMeans(temp09)
+miss <- as.data.frame(cbind(y05Miss,y09Miss))
+miss[which(miss$y05Miss<1),"y05Miss"] <- 0
+miss[which(miss$y09Miss<1),"y09Miss"] <- 0
+
+h <- cbind(h,miss)
+h1 <- h[which(h$y05Miss==0),]
+
+table1 <- table(h1$V66,h1$V62)
 sum <- apply(table1,1,sum)
 pFemale <- prop.table(table1,1)[,2]
 table1 <- cbind(sum,pFemale)
