@@ -45,4 +45,7 @@ xtable(cSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 xtable(nSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 xtable(oSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 
+table2 <- list(eSummary,aSummary,cSummary,nSummary,oSummary)
+names(table2) <- c("Extraversion","Agreeableness","Conscientiousness","Neuroticism","Openness")
+
 ######################################################################################

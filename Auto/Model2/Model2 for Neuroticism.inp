@@ -1,5 +1,5 @@
-TITLE:      HILDA Agreeableness Multigroup Model Model 3 (Time Scalar Invariance);
-DATA:       FILE is /home/rich/Documents/Datasets/HILDA09/Cleaned/aParcels.dat;
+TITLE:      HILDA Neuroticism Multigroup Model Model 2 (Time Metric Invariance);
+DATA:       FILE is /home/rich/Documents/Datasets/HILDA09/Cleaned/nParcels.dat;
 VARIABLE:   NAMES ARE id hid weight age t1p1 t1p2 t1p3
 	    t2p1 t2p2 t2p3;
             USEVAR = t1p1-t2p3;
@@ -20,10 +20,6 @@ MODEL:
             t1p1 with t2p1;
             t1p2 with t2p2;
             t1p3 with t2p3;
-            [t1p1 t2p1](i1);
-            [t1p2 t2p2](i2);
-            [t1p3 t2p3](i3);
-           
 MODEL a:    
 	    t1 by *t1p1(al1);
             t1 by t1p2(al2);
@@ -32,10 +28,10 @@ MODEL a:
             t2 by t2p2(al2);
             t2 by t2p3(al3);
 	    t1@1; t2;
-      	    [t1@0];[t2];
-            [t1p1 t2p1](ai1);
-            [t1p2 t2p2](ai2);
-            [t1p3 t2p3](ai3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL b:    
 	    t1 by *t1p1(bl1);
@@ -45,10 +41,10 @@ MODEL b:
             t2 by t2p2(bl2);
             t2 by t2p3(bl3);
 	    t1@1; t2;
-            [t1@0];[t2];
-            [t1p1 t2p1](bi1);
-            [t1p2 t2p2](bi2);
-            [t1p3 t2p3](bi3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
 MODEL c:    
 	    t1 by *t1p1(cl1);
             t1 by t1p2(cl2);
@@ -57,10 +53,10 @@ MODEL c:
             t2 by t2p2(cl2);
             t2 by t2p3(cl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ci1);
-            [t1p2 t2p2](ci2);
-            [t1p3 t2p3](ci3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL d:    
 	    t1 by *t1p1(dl1);
@@ -70,10 +66,10 @@ MODEL d:
             t2 by t2p2(dl2);
             t2 by t2p3(dl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](di1);
-            [t1p2 t2p2](di2);
-            [t1p3 t2p3](di3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
            
 MODEL e:    
 	    t1 by *t1p1(el1);
@@ -83,10 +79,10 @@ MODEL e:
             t2 by t2p2(el2);
             t2 by t2p3(el3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ei1);
-            [t1p2 t2p2](ei2);
-            [t1p3 t2p3](ei3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
 MODEL f:    
 	    t1 by *t1p1(fl1);
             t1 by t1p2(fl2);
@@ -95,10 +91,10 @@ MODEL f:
             t2 by t2p2(fl2);
             t2 by t2p3(fl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](fi1);
-            [t1p2 t2p2](fi2);
-            [t1p3 t2p3](fi3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL g:    
 	    t1 by *t1p1(gl1);
@@ -108,10 +104,10 @@ MODEL g:
             t2 by t2p2(gl2);
             t2 by t2p3(gl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](gi1);
-            [t1p2 t2p2](gi2);
-            [t1p3 t2p3](gi3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL h:    
 	    t1 by *t1p1(hl1);
@@ -121,10 +117,10 @@ MODEL h:
             t2 by t2p2(hl2);
             t2 by t2p3(hl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](hi1);
-            [t1p2 t2p2](hi2);
-            [t1p3 t2p3](hi3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL i:    
 	    t1 by *t1p1(il1);
@@ -134,10 +130,10 @@ MODEL i:
             t2 by t2p2(il2);
             t2 by t2p3(il3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ii1);
-            [t1p2 t2p2](ii2);
-            [t1p3 t2p3](ii3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
            
 MODEL j:    
 	    t1 by *t1p1(jl1);
@@ -147,10 +143,10 @@ MODEL j:
             t2 by t2p2(jl2);
             t2 by t2p3(jl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ji1);
-            [t1p2 t2p2](ji2);
-            [t1p3 t2p3](ji3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL k:    
 	    t1 by *t1p1(kl1);
@@ -160,10 +156,10 @@ MODEL k:
             t2 by t2p2(kl2);
             t2 by t2p3(kl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ki1);
-            [t1p2 t2p2](ki2);
-            [t1p3 t2p3](ki3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL l:    
 	    t1 by *t1p1(ll1);
@@ -173,10 +169,10 @@ MODEL l:
             t2 by t2p2(ll2);
             t2 by t2p3(ll3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](li1);
-            [t1p2 t2p2](li2);
-            [t1p3 t2p3](li3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 MODEL m:    
 	    t1 by *t1p1(ml1);
@@ -186,10 +182,10 @@ MODEL m:
             t2 by t2p2(ml2);
             t2 by t2p3(ml3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](mi1);
-            [t1p2 t2p2](mi2);
-            [t1p3 t2p3](mi3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
            
 MODEL n:    
 	    t1 by *t1p1(nl1);
@@ -199,9 +195,9 @@ MODEL n:
             t2 by t2p2(nl2);
             t2 by t2p3(nl3);
 	    t1@1; t2;
-      	    [t1@0];[t2]; 
-            [t1p1 t2p1](ni1);
-            [t1p2 t2p2](ni2);
-            [t1p3 t2p3](ni3);
+      	    [t1@0];[t2@0];
+            [t1p1 t2p1];
+            [t1p2 t2p2];
+            [t1p3 t2p3];
             
 OUTPUT: sampstat; stand;

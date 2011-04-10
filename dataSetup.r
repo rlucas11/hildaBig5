@@ -84,3 +84,32 @@ final$agecat5 <- cut(as.numeric(final$age05),breaks=c(seq(14,79,by=5),100),label
 final$agecat5b <- cut(as.numeric(final$age05),breaks=c(seq(14,84,by=5)),labels=seq(1:14))
 ####Output in format for Mplus
 write.table(final,"~/Documents/Datasets/HILDA09/Cleaned/hildaItems.csv",na="-9",sep=",",row.names=F,col.names=F)
+
+
+####################################################################
+## Find who participated in each wave
+####################################################################
+
+master <- read.dta("~/Documents/Datasets/HILDA09/Master_i90c.dta")
+master <- master[,c("xwaveid","efstatus","ifstatus")]
+
+## 10548 of the 12759 respondents from 2005 participated in 2009
+
+h <- read.csv("~/Documents/Datasets/HILDA09/Cleaned/hildaItems.csv",header=FALSE,na.strings="-9")
+hildaItemNames <- c(c("id","hid","age05",
+                      paste(c("y05e","y05a","y05c","y05n","y05o"),
+                            rep(1:7,each=5),sep=""),"y05e8","weight"),
+                    c("age09",paste(c("y09e","y09a","y09c","y09n","y09o"),
+                                    rep(1:7,each=5),sep=""),"y09e8"),
+                    c("female","agecat","agecat2","agecat5","agecat5b","ageSexCat"))
+names(h) <- hildaItemsNames
+
+temp05 <- sapply(h[,5:32],is.na)
+y05Miss <- rowMeans(temp05)
+temp09 <- sapply(h[,34:61],is.na)
+y09Miss <- rowMeans(temp09)
+miss <- as.data.frame(cbind(y05Miss,y09Miss))
+miss[which(miss$y05Miss<1),"y05Miss"] <- 0
+miss[which(miss$y09Miss<1),"y09Miss"] <- 0
+
+## 9557 non-missing personality reports in 2005; 8696 (90%) in 2009

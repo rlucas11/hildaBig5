@@ -1,5 +1,5 @@
 TITLE:      HILDA Conscientiousness Multigroup Model Model 4 (Group Metric Invariance);
-DATA:       FILE is /home/rich/Dropbox/HILDA09/Mplus/Auto/cParcels.dat;
+DATA:       FILE is /home/rich/Documents/Datasets/HILDA09/Cleaned/cParcels.dat;
 VARIABLE:   NAMES ARE id hid weight age t1p1 t1p2 t1p3
 	    t2p1 t2p2 t2p3;
             USEVAR = t1p1-t2p3;

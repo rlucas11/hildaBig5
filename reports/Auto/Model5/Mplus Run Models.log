@@ -1,5 +1,5 @@
-------Begin Mplus Model Run: 13Mar2011 12:33:57------
-Target directory: /home/rich/Dropbox/HILDA09/Mplus/Auto/Model5
+------Begin Mplus Model Run: 10Apr2011 07:22:38------
+Target directory: /home/rich/Projects/hildaBig5/reports/Auto/Model5
 Run options:
 	Recursive (run models in subdirectories): FALSE
 	Show output on console: FALSE
@@ -11,4 +11,4 @@ Currently running model: Model5 for Extraversion.inp
 Currently running model: Model5 for Neuroticism.inp
 Currently running model: Model5 for Openness.inp
 
-------End Mplus Model Run: 13Mar2011 12:34:57------
+------End Mplus Model Run: 10Apr2011 07:23:37------
