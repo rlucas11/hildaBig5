@@ -56,7 +56,7 @@ xtable(cSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 xtable(nSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 xtable(oSummary, caption="Fit Indexes for Measurement Invariance CFA Models")
 
-table2 <- list(eSummary,aSummary,cSummary,nSummary,oSummary)
-names(table2) <- c("Extraversion","Agreeableness","Conscientiousness","Neuroticism","Openness")
+table2 <- rbind(eSummary,aSummary,cSummary,nSummary,oSummary)
+write.csv(table2,"reports/table2.csv")
 
 ######################################################################################
