@@ -1,0 +1,7 @@
+data_loading: on
+munging: on
+logging: off
+load_libraries: on
+libraries: foreign, MplusAutomation, ggplot2, psych, xtable 
+as_factors: on
+data_tables: off
