@@ -2,13 +2,19 @@
 ##Mplus Data Setup 
 ######################################################################
 h <- read.csv("~/Documents/Datasets/HILDA09/Cleaned/hildaItems.csv",header=FALSE,na.strings="-9")
-hildaItemNames <- c(c("id","hid","age05",
-                      paste(c("y05e","y05a","y05c","y05n","y05o"),
-                            rep(1:7,each=5),sep=""),"y05e8","weight"),
-                    c("age09",paste(c("y09e","y09a","y09c","y09n","y09o"),
-                                    rep(1:7,each=5),sep=""),"y09e8"),
-                    c("female","agecat","agecat2","agecat5","agecat5b","ageSexCat"))
-names(h) <- hildaItemsNames
+## hildaItemNames <- c(c("id","hid","age05",
+##                       paste(c("y05e","y05a","y05c","y05n","y05o"),
+##                             rep(1:7,each=5),sep=""),"y05e8","weight"),
+##                     c("age09",paste(c("y09e","y09a","y09c","y09n","y09o"),
+##                                     rep(1:7,each=5),sep=""),"y09e8"),
+##                     c("female","agecat","agecat2","agecat5","agecat5b","ageSexCat"))
+
+hildaItems <- c(eItems[c(-2,-7)],aItems[c(-2,-5,-7)],cItems[-7],nItems[-7],oItems[-7])
+hildaItems9 <- c(eItems9[c(-2,-7)],aItems9[c(-2,-5,-7)],cItems9[-7],nItems9[-7],oItems9[-7])
+
+hildaItemNames <- c("id","age05","hid","weight",hildaItems,"age09",hildaItems9,
+                    "female","agecat","agecat2","agecat5","agecat5b")
+names(h) <- hildaItemNames
 
 ###Parcels for CFA
 eItems <- paste("y05e",1:8,sep="")
@@ -36,11 +42,14 @@ nParcels <- cbind(h$id,h$hid,h$weight,h$agecat5b,parcel(h[,finalN],6,2,c(2,2,2))
 oParcels <- cbind(h$id,h$hid,h$weight,h$agecat5b,parcel(h[,finalO],6,2,c(2,2,2)))
 
 ## Select those who participated in 2005
+## Only run this to check missing data
 eParcels <- eParcels[which(is.na(eParcels$parcelW1P1)==F|is.na(eParcels$parcelW1P2)==F|is.na(eParcels$parcelW1P3)==F),]
 aParcels <- aParcels[which(is.na(aParcels$parcelW1P1)==F|is.na(aParcels$parcelW1P2)==F|is.na(aParcels$parcelW1P3)==F),]
 cParcels <- cParcels[which(is.na(cParcels$parcelW1P1)==F|is.na(cParcels$parcelW1P2)==F|is.na(cParcels$parcelW1P3)==F),]
 nParcels <- nParcels[which(is.na(nParcels$parcelW1P1)==F|is.na(nParcels$parcelW1P2)==F|is.na(nParcels$parcelW1P3)==F),]
 oParcels <- oParcels[which(is.na(oParcels$parcelW1P1)==F|is.na(oParcels$parcelW1P2)==F|is.na(oParcels$parcelW1P3)==F),]
+
+
 
 prepareMplusData(eParcels,"~/Documents/Datasets/HILDA09/Cleaned/eParcels.dat")
 prepareMplusData(aParcels,"~/Documents/Datasets/HILDA09/Cleaned/aParcels.dat")

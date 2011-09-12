@@ -83,7 +83,7 @@ aggPlot <- qplot(age,agg,data=cfaCorrs,xlab="Age",ylab="r")+
   geom_smooth(data=cfaCorrs,color="grey",se=F)+
   theme_bw(base_size=10)+
   opts(title="Average")+
-  scale_y_continuous(limits=c(.40,.90))
+  scale_y_continuous(limits=c(.40,1.00))
 
 
 

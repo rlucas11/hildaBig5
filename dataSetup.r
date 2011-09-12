@@ -1,3 +1,5 @@
+## September 12 Corrections: Fix merge so All=T
+
 #################################################################
 ##Get 2005 Data (including HID & cross-sectional weight)
 #################################################################
@@ -64,7 +66,7 @@ alpha(y09p[,oItems9])
 ####################################################################
 y05pSelect <- y05p[,c("id","age05","hid","weight",hildaItems)]
 y09pSelect <- y09p[,c("id","age09",hildaItems9)]
-final <- merge(y05pSelect,y09pSelect,by="id")
+final <- merge(y05pSelect,y09pSelect,by="id",all=T)
 
 ####################################################################
 ##Pull Sex Variable from Master
@@ -78,6 +80,10 @@ final$female <- NA
 final[which(final$sex=="[1] Male"),"female"] <- 0
 final[which(final$sex=="[2] Female"),"female"] <- 1
 final$sex <- NULL
+
+
+## Create agecat variables
+final[which(is.na(final$age05)),"age05"] <- final[which(is.na(final$age05)),"age09"]-4
 final$agecat <- cut(as.numeric(final$age05),breaks=seq(14,82,by=4),labels=seq(1:17))
 final$agecat2 <- cut(as.numeric(final$age05),breaks=c(seq(14,74,by=4),100),labels=seq(1:16))
 final$agecat5 <- cut(as.numeric(final$age05),breaks=c(seq(14,79,by=5),100),labels=seq(1:14))
@@ -96,13 +102,15 @@ master <- master[,c("xwaveid","efstatus","ifstatus")]
 ## 10548 of the 12759 respondents from 2005 participated in 2009
 
 h <- read.csv("~/Documents/Datasets/HILDA09/Cleaned/hildaItems.csv",header=FALSE,na.strings="-9")
-hildaItemNames <- c(c("id","hid","age05",
-                      paste(c("y05e","y05a","y05c","y05n","y05o"),
-                            rep(1:7,each=5),sep=""),"y05e8","weight"),
-                    c("age09",paste(c("y09e","y09a","y09c","y09n","y09o"),
-                                    rep(1:7,each=5),sep=""),"y09e8"),
-                    c("female","agecat","agecat2","agecat5","agecat5b","ageSexCat"))
-names(h) <- hildaItemsNames
+## hildaItemNames <- c(c("id","age05","hid","weight",
+##                       paste(c("y05e","y05a","y05c","y05n","y05o"),
+##                             rep(1:7,each=5),sep=""),"y05e8"),
+##                     c("age09",paste(c("y09e","y09a","y09c","y09n","y09o"),
+##                                     rep(1:7,each=5),sep=""),"y09e8"),
+##                     c("female","agecat","agecat2","agecat5","agecat5b"))
+## names(h) <- hildaItemsNames
+
+names(h) <- names(final)
 
 temp05 <- sapply(h[,5:32],is.na)
 y05Miss <- rowMeans(temp05)
