@@ -15,6 +15,21 @@ names(cfaMeans) <- c("e","group","a","c","n","o")
 age <- c(17,21,22,26,27,31,32,36,37,41,42,46,47,51,52,56,57,61,62,66,67,71,72,76,77,81,82,86)
 cfaMeans <- cbind(cfaMeans,age)
 
+## Variances
+extVariances <- extParam$unstandardized[which(extParam$unstandardized$paramHeader=="Variances"),]
+agrVariances <- agrParam$unstandardized[which(agrParam$unstandardized$paramHeader=="Variances"),]
+conVariances <- conParam$unstandardized[which(conParam$unstandardized$paramHeader=="Variances"),]
+neuVariances <- neuParam$unstandardized[which(neuParam$unstandardized$paramHeader=="Variances"),]
+opeVariances <- opeParam$unstandardized[which(opeParam$unstandardized$paramHeader=="Variances"),]
+
+cfaVariances <- cbind(extVariances[,c(3,7)],agrVariances[,3],conVariances[,3],neuVariances[,3],opeVariances[,3])
+names(cfaVariances) <- c("e","group","a","c","n","o")
+age <- c(17,21,22,26,27,31,32,36,37,41,42,46,47,51,52,56,57,61,62,66,67,71,72,76,77,81,82,86)
+cfaVariances <- cbind(cfaVariances,age)
+
+write.csv(cfaVariances,"variances.csv",row.names=F)
+
+
 ePlot <- qplot(age,e,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Extraversion")+scale_y_continuous(limits=c(-1.5,1))
 aPlot <- qplot(age,a,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Agreeableness")+scale_y_continuous(limits=c(-1.5,1))
 cPlot <- qplot(age,c,data=cfaMeans,geom="line",group=group,xlab="Age",ylab="Standardized Mean")+theme_bw(base_size=10)+opts(title="Conscientiousness")+scale_y_continuous(limits=c(-1.5,1))
@@ -140,3 +155,12 @@ print(cPlot,vp=viewport(layout.pos.row=1,layout.pos.col=3))
 print(nPlot,vp=viewport(layout.pos.row=2,layout.pos.col=1))
 print(oPlot,vp=viewport(layout.pos.row=2,layout.pos.col=2))
 dev.off()
+
+
+
+#### Coefficients for Regression analyses
+summary(extModel <- lm(e ~ age + I(age^2), data=cfaCorrs))
+summary(agrModel <- lm(a ~ age + I(age^2), data=cfaCorrs))
+summary(conModel <- lm(c ~ age + I(age^2), data=cfaCorrs))
+summary(neuModel <- lm(n ~ age + I(age^2), data=cfaCorrs))
+summary(opeModel <- lm(o ~ age + I(age^2), data=cfaCorrs))
