@@ -121,3 +121,8 @@ miss[which(miss$y05Miss<1),"y05Miss"] <- 0
 miss[which(miss$y09Miss<1),"y09Miss"] <- 0
 
 ## 9557 non-missing personality reports in 2005; 8696 (90%) in 2009
+
+temp <- cbind(h,miss)
+
+table(temp[which(temp$y05Miss==0|temp$y09Miss==0),"V66"])
+sum(table(temp[which(temp$y05Miss==0|temp$y09Miss==0),"V66"]))
